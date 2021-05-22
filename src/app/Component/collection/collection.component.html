@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="collection" (click)="create_collection()">
+    <div class="create-collection-btn" role="button" tabindex="0"><i class="fas
+        fa-plus"></i>
+      <div class="title">
+        CREATE COLLECTION
+      </div>
+    </div>
+  </div>
+  <div class="collection" style="background-color: #62E2A7; padding: 20px;" *ngFor="let item of dataCollection"
+    [routerLink]="['/admin/my-library']">
+
+    <div class="details-wrapper">
+      <div class="subject-name"> {{item.name}} </div>
+      <div class="num-quizzes"> 0 Quizzes </div>
+    </div>
+    <div class="actions-button">
+      <mat-button (click)="edit_collection(item.ID, $event)" style="float:
+        left;">Edit</mat-button>
+      <mat-button (click)="delete_collection(item.ID, $event)" style="float:
+        right;">Delete</mat-button>
+    </div>
+  </div>
+
+</div>

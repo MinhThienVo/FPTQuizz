@@ -1,0 +1,139 @@
+<div class="settings settings-view">
+  <div class="signup-header"><img class="settings-logo" src="https://cf.quizizz.com/img/gears_icon.png" alt="">
+    <h1 class="title">Settings</h1>
+  </div>
+  <div class="settings-control-wrapper">
+    <div class="category-label"><span class="cat-name"><span class="cat-icon cat-user"><i
+            class="fas fa-user"></i></span>Account</span></div>
+    <hr class="hr-category" aria-hidden="true">
+    <div class="field email "><label for="email">Email</label>
+      <input pattern="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$" #emailerror="ngModel" required type="text" id="email" class="kr-textbox" placeholder="HungSE"
+        autocomplete="off" [(ngModel)]="user.UserName">
+      <mat-error class="error" *ngIf="emailerror.invalid">{{erromessage}}</mat-error>
+      <div class="loading-spinner hidden"><i class="fal fa-sync kr-anim-spin"></i></div>
+      <div class="status-msg  hidden" data-qtest="email-validation-message" aria-live="assertive"></div><span
+        class="ok-icon hidden"><i class="fas fa-check"></i></span><span class="not-ok-icon hidden"><i
+          class="fas fa-times"></i></span>
+    </div>
+    <div class="field username"><label for="username">Username</label>
+      <input #usererror="ngModel" required type="text" id="username" class="kr-textbox" placeholder="BoNgoaiGiao"
+        autocomplete="off" data-cy="username" [(ngModel)]="user.Email">
+      <mat-error class="error" *ngIf="usererror.invalid">{{erromessage}}</mat-error>
+      <div class="loading-spinner hidden"><i class="fal fa-sync kr-anim-spin"></i></div>
+      <div class="status-msg  hidden" data-qtest="username-validation-message" aria-live="assertive"></div><span
+        class="ok-icon hidden"><i class="fas fa-check"></i></span><span class="not-ok-icon hidden"><i
+          class="fas fa-times"></i></span>
+    </div><button class="signup-btn kr-btn blue " [disabled]="emailerror.invalid" id="save-changes" (click)="saveUserName()"><span class="">Save
+        Changes</span><span class="hidden"><i class="fal fa-sync kr-anim-spin"></i></span></button><br><br>
+    <div class="category-label"><span class="cat-name"><span class="cat-icon"><i class="fas fa-language"
+            aria-hidden="true"></i></span>Language</span></div>
+    <hr class="hr-category" aria-hidden="true">
+    <div class="field language-select dropdown">
+      <label for="langSelector">Select Preferred Language</label>
+      <div class="krafty-container-e65bf10e-137f-4cef-b8f0-589ade399e65 kr-selectbox no-select " id="dropdownMenuButton"
+        data-toggle="dropdown">
+        <input type="text" class="kr-selectbox-focus-helper" tabindex="-1">
+        <div class="kr-selectbox-selected-option">
+          <span class="kr-selectbox-list-item-img "
+            style="background-image: url(https://cf.quizizz.com/img/flag_icons/us.png)">
+          </span>
+          <input class="kr-selectbox-selected-open-text kr-selectbox-search-input hidden" placeholder="Select"
+            value="English">
+          <span class="kr-selectbox-selected-option-text " role="listbox" aria-expanded="false"
+            aria-activedescendant="option0" tabindex="0">English</span>
+          <i class="fas fa-caret-down " style="width: 100%; text-align: right;"></i>
+        </div>
+      </div>
+      <div class="kr-selectbox-list-container tablet dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <ul class="kr-selectbox-list" id="list" role="listbox" aria-expanded="false" aria-activedescendant="option0">
+          <li data-idx="0" data-val="en" class="has-image" id="option1" aria-selected="true" role="option"
+            tabindex="-1">
+            <span class="kr-selectbox-list-item-img "
+              style="background-image: url(https://cf.quizizz.com/img/flag_icons/us.png)"></span>
+            <div class="kr-selectbox-list-item-text">English</div>
+          </li>
+          <li data-idx="1" data-val="es" class="has-image" id="option2" aria-selected="false" role="option"
+            tabindex="-1"><span class="kr-selectbox-list-item-img "
+              style="background-image: url(https://cf.quizizz.com/img/flag_icons/es.png)"></span>
+            <div class="kr-selectbox-list-item-text">Español</div>
+          </li>
+          <li data-idx="2" data-val="fr" class="has-image" id="option3" aria-selected="false" role="option"
+            tabindex="-1"><span class="kr-selectbox-list-item-img "
+              style="background-image: url(https://cf.quizizz.com/img/flag_icons/fr.png)"></span>
+            <div class="kr-selectbox-list-item-text">Français</div>
+          </li>
+          <li data-idx="3" data-val="nl" class="has-image" id="option4" aria-selected="false" role="option"
+            tabindex="-1"><span class="kr-selectbox-list-item-img "
+              style="background-image: url(https://cf.quizizz.com/img/flag_icons/nl.png)"></span>
+            <div class="kr-selectbox-list-item-text">Dutch</div>
+          </li>
+          <li data-idx="4" data-val="pl" class="has-image" id="option5" aria-selected="false" role="option"
+            tabindex="-1"><span class="kr-selectbox-list-item-img "
+              style="background-image: url(https://cf.quizizz.com/img/flag_icons/pl.png)"></span>
+            <div class="kr-selectbox-list-item-text">Polish</div>
+          </li>
+          <li data-idx="5" data-val="ru" class="has-image" id="option6" aria-selected="false" role="option"
+            tabindex="-1"><span class="kr-selectbox-list-item-img "
+              style="background-image: url(https://cf.quizizz.com/img/flag_icons/ru.png)"></span>
+            <div class="kr-selectbox-list-item-text">Russian</div>
+          </li>
+          <li data-idx="6" data-val="id" class="has-image" id="option7" aria-selected="false" role="option"
+            tabindex="-1"><span class="kr-selectbox-list-item-img "
+              style="background-image: url(https://cf.quizizz.com/img/flag_icons/id.png)"></span>
+            <div class="kr-selectbox-list-item-text">Bahasa Indonesia</div>
+          </li>
+        </ul>
+        <div class="kr-selectbox-btn hidden"></div>
+      </div>
+    </div>
+    <br><br>
+    <div class="category-label"><span class="cat-name"><span class="cat-icon">
+          <i class="fas fa-lock" aria-hidden="true"></i></span>Password</span></div>
+    <hr class="hr-category" aria-hidden="true">
+    <div class="field old-password hidden"><label>Old password</label><input type="password" id="old-password"
+        class="kr-textbox" placeholder=""></div>
+    <div class="field new-password"><label for="new-password">Old password <span class="help-text">(At least 6
+          characters)</span></label><input type="password" id="new-password" class="kr-textbox"
+        placeholder="***********" [(ngModel)]="user1.OldPassword" 
+        #oldpassworderror="ngModel">
+      <mat-error class="error" *ngIf="oldpassworderror.invalid">{{erromessage}}</mat-error>
+      <div class="loading-spinner hidden"><i class="fal fa-sync kr-anim-spin"></i></div>
+      <span class="ok-icon hidden">
+        <i class="fas fa-check"></i>
+      </span>
+
+    </div>
+    <div class="field new-password"><label for="new-password">New password <span class="help-text">(At least 6
+          characters)</span></label>
+      <input type="password" id="new-password" class="kr-textbox" placeholder="***********"
+        [(ngModel)]="user1.NewPassword" #newpassworderror="ngModel">
+      <mat-error class="error" *ngIf="newpassworderror.invalid">{{erromessage}}</mat-error>
+      <div class="loading-spinner hidden"><i class="fal fa-sync kr-anim-spin"></i></div>
+      <span class="ok-icon hidden">
+        <i class="fas fa-check"></i>
+      </span>
+
+    </div>
+    <div class="field new-password-again"><label for="new-password-again">New password again</label>
+      <input type="password" id="new-password-again" class="kr-textbox" placeholder="***********"
+        [(ngModel)]="user1.ConfirmPassword" #againpassworderror="ngModel">
+      <mat-error class="error" *ngIf="againpassworderror.invalid">{{erromessage}}</mat-error>
+      <div class="loading-spinner hidden"><i class="fal fa-sync kr-anim-spin"></i></div>
+      <div class="status-msg  hidden" aria-live="assertive"></div><span class="ok-icon hidden"><i
+          class="fas fa-check"></i></span><span class="not-ok-icon hidden"><i class="fas fa-times"></i></span>
+    </div><button class="signup-btn kr-btn blue disabled" id="update-password" (click)="ChangePass()"><span
+        class="">Update
+        Password</span><span class="hidden"><i class="fal fa-sync kr-anim-spin"></i></span></button><br><br>
+    <div class="category-label"><span class="cat-name"><span class="cat-icon"><i class="fas fa-trash-alt"
+            aria-hidden="true"></i></span>Change account type</span></div>
+    <hr class="hr-category" aria-hidden="true">
+    <button class="kr-btn blue switch-account-btn" (click)="ChangeAccountType()"><span>Convert to
+        student account</span></button><br><br>
+    <div class="category-label">
+      <span class="cat-name"><span class="cat-icon"><i class="fas fa-trash-alt" aria-hidden="true"></i></span>Delete
+        Account</span>
+    </div>
+    <hr class="hr-category" aria-hidden="true">
+    <div class="delete-acc-msg">Permanently delete your account</div><button class="kr-btn delete-account-btn "
+      (click)="openDialog()">Delete Account</button>
+  </div>

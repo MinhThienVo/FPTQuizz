@@ -1,0 +1,66 @@
+<div>
+  <mat-toolbar style="background-color: #461A42; border: 2px solid; box-shadow: 0px 1px 20px black;">
+    <a href="/admin">
+      <img src="https://cf.quizizz.com/img/quizizz_logos/white-brandmark-600x164.png" width="110px" alt="hinh quizz">
+    </a>
+    <span class="example-spacer"></span>
+    <button mat-button routerLink="/login" style="color: white; background-color: #6B4868; margin-right: 50px;">Log
+      In</button>
+  </mat-toolbar>
+</div>
+<div fxLayoutAlign="center start" fxFlexFill class="main-div" style="margin-top: 1px;">
+  <mat-card fxFlex="30">
+    <mat-card-header>
+      <div style="margin: auto;text-align: center">
+        <mat-card-title>Teacher Account Details</mat-card-title>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-label>First Name</mat-label>
+      <mat-form-field appearance="outline">
+        <input pattern="\s*\S+.*" matInput type="text" [(ngModel)]="firstname" required #errfirstname="ngModel"
+          maxlength="16" placeholder="First Name..">
+        <mat-error class="error" *ngIf="errfirstname.invalid">{{errorFristName}}</mat-error>
+      </mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <mat-form-field appearance="outline">
+        <input pattern="\s*\S+.*" matInput type="text" [(ngModel)]="lastname" #errastname="ngModel" required
+          maxlength="16" placeholder="Last Name..">
+        <mat-error class="error" *ngIf="errastname.invalid">{{errorLastName}}</mat-error>
+      </mat-form-field>
+
+      <div>
+        <mat-label>Password</mat-label>
+        <mat-form-field appearance="outline" style="width: 100%">
+
+          <input pattern="\s*\S+.*" matInput #passwordWithValidation [type]="hide ? 'password' : 'text'" required
+            maxlength="16" [formControl]="passwordComponentWithValidation.passwordFormControl" placeholder="***********"
+            [(ngModel)]="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-hint align="end" aria-live="polite">
+            {{passwordWithValidation.value.length}} / 16
+          </mat-hint>
+          <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('required')">
+            Password is required
+          </mat-error>
+          <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('pattern')">
+            Password is not valid
+          </mat-error>
+        </mat-form-field>
+        <mat-password-strength #passwordComponentWithValidation (onStrengthChanged)="onStrengthChanged($event)"
+          [password]="passwordWithValidation.value">
+        </mat-password-strength>
+        <mat-password-strength-info style="float: right;" [passwordComponent]="passwordComponentWithValidation">
+        </mat-password-strength-info>
+      </div>
+    </mat-card-content>
+    <button id="summit" mat-button style="width: 100%; background-color: #8753BF; color: white"
+      [disabled]="firstname === '' || lastname === '' || passwordComponentWithValidation.passwordFormControl.invalid"
+      (click)="SubmitTeacher()">Continue
+      <!-- routerLink="/login" -->
+    </button>
+  </mat-card>
+</div>

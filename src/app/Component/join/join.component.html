@@ -1,0 +1,90 @@
+<div class="main">
+  <div class="header" style="border-bottom: 1px solid;">
+    <nav class="navbar navbar-expand-sm">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link navbar-brand logo"></a>
+          </li>
+          <li>
+            <div class="search-input-container"><input type="text" placeholder="Find a quiz" class="search-input">
+              <a><span class="search-icon-container">
+                  <i class="fas fa-search search-icon"></i>
+                </span></a>
+            </div>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right login-menu">
+          <li *ngIf="userid !== null"><button class="btn btn-logout" [routerLink]="['/login']" (click)="logout()">Log
+              Out</button></li>
+          <li *ngIf="userid == null"><button class="btn btn-login" [routerLink]="['/login']">Login</button></li>
+          <li *ngIf="userid == null"><button class="btn btn-signup" [routerLink]="['/register']">Sign up</button></li>
+          <li>
+            <div class="menu-toggle dropdown">
+              <button class="btn-menu" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false" mat-icon-button aria-label="Example icon button with a menu
+                                icon">
+                <mat-icon>menu</mat-icon>
+              </button>
+
+
+              <div class="dropdown-menu dropdown-menu-right" id="hidemenu" aria-labelledby="dropdownMenuLink">
+                <a *ngIf="userid != null" class="dropdown-item" [routerLink]="['/setting-join']">Setting</a>
+                <a *ngIf="userid == null" class="dropdown-item" [routerLink]="['/register']">Sign up</a>
+                <a *ngIf="userid == null" class="dropdown-item" [routerLink]="['/login']">Log in</a>
+                <a *ngIf="userid != null" class="dropdown-item" [routerLink]="['/login']" (click)="logout()">Log out</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </div>
+  <!--  -->
+  <div style="height: 100px; width: 100%;">
+
+  </div>
+  <!--  -->
+  <div class="content">
+    <div *ngFor="let subject of dataSubjects" class="col-md-12
+            featured-section">
+      <div class="section-header row">
+        <div class="section-title col-md-6">
+          <h2> {{ subject.Name }} </h2>
+        </div>
+        <div class="section-more-cta col-md-6">
+          <button style="cursor: pointer;" class="btn-more
+                        router-link">See more <i class="far fa-angle-right"></i></button>
+        </div>
+      </div>
+      <div class="section-quizzes-list">
+        <div *ngFor="let quizz of subject.Quizzs.slice(0, 6);" class="quiz-info-card-wrapper" title="{{ quizz.Name }}">
+          <a class="router-link" [routerLink]="['//admin/detail', quizz.Name,quizz.ID]">
+            <div class="card-image">
+              <img
+                src="https://quizizz.com/media/resource/gs/quizizz-media/quizzes/0652b950-5cd0-4f5c-a3bd-f3d43bb1421a?w=300&amp;h=300"
+                alt="">
+            </div>
+            <div class="card-details-container">
+              <div class="quiz-type-title">QUIZ</div>
+              <div class="quiz-name"> {{ quizz.Name }} </div>
+              <div class="quiz-details">
+                <div class="info-ques-count"><i class="fal fa-tasks details-icon"></i>&ensp;10 questions
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.1)" size="medium" color="#281d1d" type="ball-spin" [fullScreen]="false">
+      <p style="color: black"> Loading... </p>
+    </ngx-spinner>
+
+  </div>
+</div>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.1)" size="medium" color="#281d1d" type="ball-spin" [fullScreen]="false">
+  <p style="color: black"> Loading... </p>
+</ngx-spinner>

@@ -1,0 +1,122 @@
+<div class="row">
+
+  <div class="my-quizz-container col-md-9">
+    <div class="">
+      <button mat-button (click)="back()"><i class="fa fa-angle-left mr-1" aria-hidden="true"></i> Back</button>
+    </div>
+    <div style="margin-bottom: 20px;">
+      <div class="dataQuiz" style="height: 120px; color: black">
+
+        <div class="name" style="margin-top: 15px;">
+          <h4>{{nameQuizz | slice:0:20}} </h4>
+        </div>
+        <div class="details" style="display: block; font-size:
+        12px;
+        margin-bottom: 5px;color: #b8b8b8">
+          <div class="questions-length"><i aria-hidden="true" class="far
+            fa-presentation"></i> {{NumberQuestion}} Question</div>
+          <div class="grades"><i aria-hidden="true" class="fal
+            fa-book"></i> 3rd grade</div>
+          <div class="played"><i aria-hidden="true" class="fal
+            fa-play"></i> Played {{Time}} times</div>
+        </div>
+        <div class="action">
+          <div class="create-by" style="display: inline-flex">
+            <div class="img-user" style="background-color:
+            #5DE2A5;margin-right: 5px; width: 20px;
+            height: 20px;
+            background-image: url('#'); border-radius:
+            20px"></div>
+            <div class="user-data">
+              <a style="color: black">Tên
+                user </a>
+            </div>
+          </div>
+          <div class="action-btns" style="font-size: 12px;
+            float: right">
+            <button class="action-bton like">
+              <i aria-hidden="true" class="fal fa-heart"></i>
+              Like
+            </button>
+            <button class="action-bton save" style="z-index:2">
+              <i aria-hidden="true" class="fas tagged
+              fa-folder"></i> Save
+            </button>
+          </div>
+        </div>
+        <div style="width: 100%;">
+          <span style="font-size: 18px; font-weight: bold;"> Description: </span>
+          <span [innerHTML]="Description"></span>
+        </div>
+        <div>
+          <span style="font-size: 18px; font-weight: bold;"> Tags: </span>
+          <i *ngFor="let item of Tags"> {{item.Content +','}} </i>
+        </div>
+        <mat-progress-bar style="width: 70%;" mode="indeterminate" style="margin-top: 10px;margin-bottom: 10px;"
+          *ngIf="progress_load">
+        </mat-progress-bar>
+      </div>
+      <!-- tag -->
+      <!-- <div>
+        <span style="font-size: 18px; font-weight: bold;"> Part: </span>
+      </div> -->
+      <div class="row" *ngFor="let part of dataPart">
+        <div class="col-md-12 mb-2 mt-2">
+          <button [ngClass]="ChoosePart == part.ID? 'changeBGcolor':''" class="btn btn-primary ml-1 mr-3"
+            style="width: 100%;" (click)="changeIPart(part.ID,ChoosePart=part.ID)">{{part.Name}}<span
+              style="float: right;">{{part.NumberQuestion}}
+              Question <i class="fa fa-question-circle-o" aria-hidden="true"></i></span>
+          </button>
+        </div>
+      </div>
+      <div class="mt-1 row">
+        <div id="scroll" class="col-md-6" style="text-align: center;"> <button class="btn btn-primary"
+            [disabled]="disableButtonStart" (click)="StartExam()"><i class="fa fa-play mr-1" aria-hidden="true"></i>
+            Start
+            Exam </button></div>
+        <div class="col-md-6"> <button class="btn btn-primary" [disabled]="ckAnswer"
+            (click)="CheckAnswer();CheckTrueAnswer=true"><i class="fa fa-eye mr-1" aria-hidden="true"></i> Check
+            Answer</button></div>
+      </div>
+    </div>
+    <mat-progress-bar mode="indeterminate" style="margin-top: 10px;margin-bottom: 10px;" *ngIf="progress_bar_answer">
+    </mat-progress-bar>
+
+    <div class="quizz" *ngFor="let item of dataquestion; let i=index" style="width:
+       100%; margin-top: 5px; padding: 5px; z-index: 0">
+      <h4 style="color: royalblue;"> Question {{i+1}}:</h4>
+      <div style="background-color: khaki; margin-bottom: 10px; font-size: 20px !important;font-weight: bold;">
+        <!-- noidung -->
+        <span [innerHTML]="item.Content"></span>
+      </div>
+      <!-- for check + dapan -->
+      <div *ngFor="let icu of item.ListAnswer; let j=index" class="row">
+        <div class="col-md-2" style="text-align: center; margin: auto;">
+          <input type="radio" name="{{i}}" class="ckbAnswer"
+            (change)="changeCheckbox(listAnserTrue[i]=icu.IsTrueAnswer)" id="{{icu.ID}}" [value]="true"
+            [disabled]="disableRadio">
+          <!-- [checked]="icu.IsTrueAnswer == checkanswerTrue && checkanswerTrue!=false " -->
+          <!-- <span *ngIf="icu.IsTrueAnswer == checkanswerTrue"><i class="fa fa-check ml-3" aria-hidden="true"
+              style="color: seagreen;font-size: 20px;"></i></span> -->
+        </div>
+        <div class="col-md-10 mb-1" [ngClass]="CheckTrueAnswer == icu.IsTrueAnswer? 'changebg': '' ">
+          <span [innerHTML]="icu.Content"></span>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <!-- <h3>Total Score: <span *ngIf="scoreHide">{{score}}</span> /</h3> -->
+    <div>
+      <button [disabled]="disableRadio" class="btn btn-success mb-2" style="width: 20%;height: 3%;"
+        (click)="submitQuizz()">Submit</button>
+      <!-- <button class="btn btn-primary mb-2 ml-2" style="width: 20%;height: 3%;"
+        (click)="againQuizz();ScrollQuestion()">Again</button> -->
+    </div>
+    <h3>Total Score: <span *ngIf="scoreHide">{{score}}</span> /{{numberQuestioninPart}}</h3>
+  </div>
+  <div class="col-md-3" style="padding: 0px;">
+    <div><img class="" style="width: 100%; margin: 5px;" src="https://cf.quizizz.com/img/super/ads/ads_banner14.png"
+        aria-hidden="true"></div>
+  </div>
+</div>
+<div style="height: 50px"></div>

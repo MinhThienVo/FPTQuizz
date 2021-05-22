@@ -1,0 +1,36 @@
+<div>
+    <mat-toolbar style="background-color: #461A42; border: 2px solid; box-shadow: 0px 1px 20px black;">
+      <a href="/admin">
+      <img src="https://cf.quizizz.com/img/quizizz_logos/white-brandmark-600x164.png" width="110px" alt="hinh quizz">
+    </a>
+
+      <span class="example-spacer">{{emailLogin}}</span>
+        <button mat-button routerLink="/login" style="color: white; background-color: #6B4868; margin-right: 50px;">Log In</button>
+    </mat-toolbar>
+</div>
+
+<div fxLayoutAlign="center start" fxFlexFill class="main-div" style="margin-top: 1px;">
+    <mat-card fxFlex="30">
+        <mat-card-header>
+            <div style="margin: auto;text-align: center;">
+                <mat-card-title><b>Choose your roll</b></mat-card-title>
+            </div>
+        </mat-card-header>
+        <mat-card-content>
+            <div style="text-align: center">
+                <button [routerLink]="['/teacher-account-details',email,role]">
+            <img width="100%" src="https://cf.quizizz.com/img/signup/occupation_icons/teacher_icon_v2.png">
+             <br>
+            <span>Teacher</span>
+          </button>
+                <button [routerLink]="['/student-account-details',email,role]">
+            <img width="100%" src="https://cf.quizizz.com/img/signup/occupation_icons/student_icon_v2.png">
+            <br>
+                  <span>Student</span>
+
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+<!-- <router-outlet></router-outlet> -->

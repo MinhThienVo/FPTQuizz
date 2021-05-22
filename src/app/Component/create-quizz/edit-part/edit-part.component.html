@@ -1,0 +1,17 @@
+<div>
+  <div class="">
+    <mat-label style="margin-left: 20px;font-size: 20px;font-weight: bold">
+      Edit `{{name}}`</mat-label>
+    <hr>
+  </div>
+  <div>
+    <mat-label> Part name edit</mat-label>
+    <mat-form-field appearance="outline">
+      <input matInput type="text" [(ngModel)]="partname">
+    </mat-form-field>
+  </div>
+  <div style="text-align: right">
+    <button mat-button (click)="onCancelClick()" class="btn">Cancel</button>
+    <button mat-button class="btn" (click)="onUpdateClick()">Update</button>
+  </div>
+</div>

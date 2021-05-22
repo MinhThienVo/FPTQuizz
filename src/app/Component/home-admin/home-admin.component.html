@@ -1,0 +1,89 @@
+<div class="container-fluid header" (click)="turnOffEditClass($event)">
+  <nav class="navbar navbar-expand-lg navDesign">
+    <div class="col-md-1 img">
+      <a [routerLink]="['/admin']" routerLinkActive="router-link-active"><img
+          src="https://cf.quizizz.com/img/quizizz_logos/white-brandmark-600x164.png" class="homeimg"></a>
+    </div>
+    <div class="search col-md-9">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <input class="form-control inputSearch" type="search" placeholder="Search" aria-label="Search">
+      <div class="dropdown menuDropdown">
+        <button class="btn dropdown-toggle Menu1" type="button" id="dropdownMenu2" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          {{titleSearch}}
+        </button>
+        <div class="dropdown-menu Menu2">
+          <button class="dropdown-item itemTitle" type="button" (click)="onClick($event)">Quizizz library</button>
+          <button class="dropdown-item itemTitle" type="button" (click)="onClick($event)">My lab</button>
+          <button class="dropdown-item itemTitle" type="button" (click)="onClick($event)">Report</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 rightHeader">
+      <a *ngIf="useID == null" class="LogOut" [routerLink]="['/register']">Sign up</a>
+      <a *ngIf="useID == null" class="Login" [routerLink]="['/login']">Log in</a>
+      <a *ngIf="useID != null" class="LogOut" [routerLink]="['/login']" (click)="logout()">Log out</a>
+    </div>
+  </nav>
+  <div class="row bodyHearder">
+    <div class="col-md-2 menuStand">
+      <div class="headerStand row">
+        <div class="col-md-4 loginNow">
+          <button [routerLink]="['/login']" routerLinkActive="router-link-active" class="user-img"
+            aria-label="Log in now">
+            <i class="fa fa-user-plus" aria-hidden="true"></i></button>
+        </div>
+        <div class="user-details col-md-8">
+          <span *ngIf="useID == null" class="name">Have an account?</span>
+          <span *ngIf="useID != null" class="name"
+            style="display: block; padding-top: 7px; text-align: left; font-size: 16px;">{{userName}}</span>
+          <button *ngIf="useID == null" class="login-btn loginButton" [routerLink]="['/login']"
+            routerLinkActive="router-link-active">Log in now</button>
+        </div>
+      </div>
+      <div class="create-menu-wrapper">
+        <button class="create-btn" id="create" [routerLink]="['/admin/create-quizz']">
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          <span class="create-btn-label">Create</span>
+          <i class="fa fa-caret-down" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="main-navigation-list-wrapper">
+        <ul class="main-navigation-list">
+          <li id="explore" [ngClass]="{'selected': classSelect === 'explore'}" [routerLink]="['/admin/explore']"
+            (click)="changeClassLi($event)"><i id="explore" aria-hidden="true" class="fas fa-map-marked-alt"></i><span
+              id="explore" tabindex="0">Explore</span></li>
+          <li id="my-library" [ngClass]="{'selected': classSelect === 'my-library'}"
+            [routerLink]="['/admin/my-library']" (click)="changeClassLi($event)"><i id="my-library" aria-hidden="true"
+              class="fal fa-books"></i><span id="my-library" tabindex="0">My
+              library</span></li>
+          <li id="report" [ngClass]="{'selected': classSelect === 'report'}" [routerLink]="['/admin/report']"
+            (click)="changeClassLi($event)"><i id="report" aria-hidden="true" class="fal fa-analytics"></i><span
+              id="report" tabindex="0">Report</span></li>
+          <li id="classes" [ngClass]="{'selected': classSelect === 'classes'}" [routerLink]="['/admin/classes']"
+            (click)="changeClassLi($event)"><i id="classes" aria-hidden="true" class="fal fa-users-class"></i><span
+              id="classes" tabindex="0">Classes</span></li>
+          <li id="setting" [ngClass]="{'selected': classSelect === 'setting'}" [routerLink]="['/admin/setting']"
+            (click)="changeClassLi($event)"><i id="setting" aria-hidden="true" class="fal fa-cog"></i><span id="setting"
+              role="link" tabindex="0">Settings</span></li>
+          <hr class=" {{hidden}} ">
+          <li id="collection" class=" {{hidden}} " [ngClass]="{'selected': classSelect === 'collection'}"
+            [routerLink]="['/admin/collection']" (click)="changeClassLi($event)">
+            <i id="collection" aria-hidden="true" class="fal fa-folder"></i><span id="collection" tabindex="0"
+              aria-hidden="false">Collections</span>
+          </li>
+
+          `
+          <li id="nav-more" class="nav-collapsed" (click)="hideItemMenu()">
+            <i id="nav-more" aria-hidden="true" class="fas fa-ellipsis-v"></i>
+            <span id="nav-more" aria-hidden="false" [ngClass]="{'hidden': hidden === ''}">More</span>
+            <span id="nav-more" aria-hidden="true" [ngClass]="{'hidden': hidden === 'hidden'}">Less</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-10 contentQuizz">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

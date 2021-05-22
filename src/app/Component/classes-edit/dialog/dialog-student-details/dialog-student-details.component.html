@@ -1,0 +1,28 @@
+<div class="kr-modal-body">
+  <div class="header">
+    <div class="title">Student Roster Details</div>
+    <div class="sub-title">Changes to roster details do not affect student account data.</div>
+  </div>
+  <div class="body">
+    <div class="field "><label>Student email address</label>
+      <div class="display email"></div>
+    </div>
+    <div class="field"><label>First name</label><input type="text" id="firstName" placeholder="Enter first name"
+        value="{{firstName}}" [(ngModel)]="firstName">
+      <div class="err hidden" *ngIf="false">Please enter the first name</div>
+    </div>
+    <div class="field"><label>Last name</label><input type="text" id="lastName" placeholder="Enter Last name"
+        value="{{lastName}}" [(ngModel)]="lastName">
+      <div class="err hidden" *ngIf="false">Please enter the last name</div>
+    </div>
+    <div class="field"><label>Parent or guardian email address</label>
+      <div class="input-well"><input class="input " type="text" id="parentEmail"
+          placeholder="Enter parent's or guardian email" value=""></div>
+      <div class="err hidden" *ngIf="false">Please enter a valid email address</div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="cancel-btn" (click)="onNoClick()">Cancel</div>
+    <div class="save-btn"> Save </div>
+  </div>
+</div>

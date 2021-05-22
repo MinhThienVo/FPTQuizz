@@ -1,0 +1,42 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-div {
+    margin-top: 1px;
+    background-color: #461A42;
+}
+
+mat-card {
+    margin-top: 50px;
+    padding: 50px 20px 20px 20px;
+}
+mat-card-content button{
+
+    border: none;
+  border-radius: 8px;
+  box-shadow:  2px 2px 2px 2px #D8D8D8;
+
+}
+mat-label{
+  font-size: 18px;
+}
+hr{
+  width:100%
+}
+mat-error{
+  font-size: 16px;
+}
+mat-card-title{
+  font-size: 25px !important;
+}
+mat-card-subtitle{
+  font-size: 16px !important;
+
+}
+

@@ -1,0 +1,22 @@
+.header {
+  font-size: 20px;
+  background-color: #fff;
+  color: #393A68;
+  padding: 12px;
+}
+
+.header img {
+  margin-top: -12px;
+  margin-left: -12px;
+  width: 48px;
+  float: left;
+}
+
+mat-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-radio-button {
+  margin: 0 12px;
+}

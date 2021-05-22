@@ -1,0 +1,9 @@
+<div class="kr-modal-body">
+  <div class="header">Do you want to remove '{{firstName}}{{ lastName }}' from this class?</div>
+  <div class="msg"> </div>
+  <div class="footer">
+    <div class="cancel-btn" (click)="onNoClick()"> Cancel </div>
+    <div class="action-btn remove" (click)="removeStudent()" [mat-dialog-close]="data">
+      REMOVE </div>
+  </div>
+</div>

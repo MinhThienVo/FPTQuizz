@@ -1,0 +1,27 @@
+<div>
+    <div class="">
+        <mat-label style="margin-left: 20px;font-size: 20px;font-weight: bold">
+            Edit `{{collection.name}}`</mat-label>
+        <hr>
+    </div>
+    <div>
+        <mat-label>Collection name</mat-label>
+        <mat-form-field appearance="outline">
+            <input matInput type="text" [(ngModel)]="name">
+        </mat-form-field>
+        <br>
+        <div>
+            <mat-label>Visibility</mat-label>
+            <br>
+            <mat-radio-group>
+                <mat-radio-button value="auto">Public</mat-radio-button>
+                <mat-radio-button checked value="always">Private</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+
+    <div style="text-align: right">
+        <button mat-button (click)="onCancelClick()" class="btn">Cancel</button>
+        <button mat-button class="btn" (click)="onUpdateClick()">Update</button>
+    </div>
+</div>

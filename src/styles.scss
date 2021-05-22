@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  font-family: "Open Sans", sans-serif, Helvetica, Arial;
+  font-weight: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.note-modal-backdrop {
+  z-index: unset !important;
+}
+
+@import '~handsontable/dist/handsontable.full.css';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
+.modal-dialog {
+  margin-left: 440px !important;
+  margin-right: 400px !important;
+  margin-top: 90px !important;
+}
+
+.modal-content {
+  width: 142% !important;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

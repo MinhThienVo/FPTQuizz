@@ -1,0 +1,35 @@
+<h3>Question Pool</h3>
+<div>
+  <div class="row">
+    <div class="col-md-6">
+      <h6>Enter number questions ramdom from question pool</h6>
+    </div>
+    <div class="col-md-3">
+      <input type="number" [(ngModel)]="number">
+    </div>
+    <div class="col-md-3">
+      <!-- <button class="btn btn-primary" (click)="addRanDom()">
+        Add Random
+      </button> -->
+    </div>
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <h3>List Question</h3>
+    <mat-progress-bar mode="indeterminate" *ngIf="progress"></mat-progress-bar>
+    <div *ngFor="let item of dataQuestion;let i=index">
+      <div class="row">
+        <div class="col-md-1">
+          <input type="checkbox" name="" [id]="item.ID" [value]="item.ID" (change)="checkIdQuestion(item.ID)">
+          <!-- {{item.ID}} -->
+        </div>
+        <div class="col-md-11" style="font-size: 16px !important;"> Name Question: <span
+            [innerHTML]="item.Content"></span>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <div style="margin-top: 20px; text-align: right;">
+    <button (click)="onCancelClick()" class="btn btn-primary mr-2">Cancel</button>
+    <button class="btn btn-primary" (click)="AddQuestionPool()">Add questions</button>
+  </div>
+</div>

@@ -1,0 +1,122 @@
+<main id="page-container" tabindex="0" class="page-container desktop">
+  <div class="groups-view desktop">
+    <div class="header">
+      <div class="info-col ">
+        <div class="title">My Classes</div>
+      </div>
+      <div class="btn-col" (click)="openCreateClass()">
+        <button class="create-group-btn"><i class="far fa-plus"></i> Create a class </button>
+      </div>
+    </div>
+    <div class="groups-table">
+      <div class="table-header">
+        <div class="cell">Class</div>
+        <div class="cell">
+          <div class="checkbox">
+            <mat-checkbox></mat-checkbox>
+          </div>
+        </div>
+        <div class="cell">Student</div>
+        <div class="cell">Parent or guardian</div>
+        <div class="cell"> Parent summary report </div>
+        <div class="cell"></div>
+      </div>
+      <div class="table-body">
+        <div class="groups-list">
+          <div class="groups">
+            <div class="group" *ngFor="let class of listClass; index as i" [ngClass]="{active: selectIndex === i}"
+              (click)="setSelect(i, class.ID)">
+              <div class="color" style="background-color: hsl(288, 78%, 43%);"></div>
+              <div class="name " title="{{class.Name}}"> {{ class.Name }} </div>
+              <div class="num-students" *ngIf="class.ListClass.length === 0">New class</div>
+              <div class="num-students" *ngIf="class.ListClass.length !== 0">{{class.ListClass.length}} student </div>
+              <div class="menu-container" (click)="openEditClass(i)">
+                <div class="menu-btn"><i class="far fa-ellipsis-v"></i></div>
+                <div class="menu" [ngClass]="{show: editClass === i}">
+                  <ul class="menu-list">
+                    <li class="menu-item"><i class="fas fa-edit"></i>
+                      <div class="text"> Edit class details </div>
+                    </li>
+                    <li class="menu-item" (click)="open(content, class.ID, class.Name)">
+                      <i class="fas fa-file-archive"></i>
+                      <div class=" text"> Import student
+                      </div>
+                    </li>
+                    <li style="display: none;"><input type="file" id="fileLoader" readonly name="files"
+                        title="Load File" (change)="handle($event)" multiple /></li>
+                    <li (click)="removeClass(class.ID)" class="menu-item" data-action="archive"><i
+                        class="fas fa-archive"></i>
+                      <div class="text"> Remove class </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer" (click)="openDialogAddStudent(class.ID)">
+                <div class="get-link-btn"><i class="far fa-user-plus"></i> Add students </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="students-list">
+          <div class="students-list-container" *ngFor="let item of listStudnet; index as i">
+            <div class=" student" (click)="openDialogStudentDetail($event,item);$event.stopPropagation()">
+              <div class="checkbox-container student-checkbox" (click)="$event.stopPropagation()">
+                <mat-checkbox class="checkbox"></mat-checkbox>
+              </div>
+              <div class="name"> {{ item["account"]["FirstName"] + " " + item["account"]["LastName"] }} </div>
+              <div class="email"><span class="grayed"> Enter parent or guardian email address </span></div>
+              <div class="notify"></div>
+              <div class="menu-container">
+                <div class="menu-btn" (click)="openEditStudent(i, $event)">
+                  <i class="far fa-ellipsis-v"></i>
+                </div>
+                <div class="menu" [ngClass]="{show: editStudent === i}">
+                  <ul class="menu-list">
+                    <li class="menu-item" (click)="openDialogStudentDetail($event,item)"><i class="fas fa-edit"></i>
+                      &nbsp;
+                      <div class="text"> Edit student details </div>
+                    </li>
+                    <li class="menu-item" (click)="deleteStudent(item); $event.stopPropagation()" data-action="remove">
+                      <i class="fas fa-trash-alt"></i>
+                      &nbsp;
+                      <div class="text"> Remove from class </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="delete-member-btn hidden"><i class="fas fa-trash-alt"></i></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.2)" size="medium" color="#281d1d" type="ball-spin" [fullScreen]="false">
+
+</ngx-spinner>
+
+
+
+
+<ng-template #content let-modal>
+  <ngx-spinner bdColor="rgba(0, 0, 0, 0.2)" size="medium" color="#281d1d" type="ball-spin" [fullScreen]="false">
+
+  </ngx-spinner>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">List student</h4>
+    <h4 class="modal-title" id="modal-basic-title">Class: {{ className }}</h4>
+  </div>
+  <div class="modal-body" id="bodyExcel">
+    <div id="excel" class="hot handsontable">
+
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-success" (click)="addStudents()">Add student</button>
+    <button type="button" class="btn btn-outline-dark" (click)="cancelExcel()">Cancel</button>
+  </div>
+</ng-template>

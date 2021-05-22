@@ -1,0 +1,429 @@
+.groups-view {
+  padding: 16px;
+  padding-top: 0;
+}
+
+.page-container:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.groups-view .header {
+  padding: 16px 0;
+}
+
+.groups-view .header .info-col {
+  width: calc(100% - 400px);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.groups-view .header .info-col .title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #292A3A;
+}
+
+.groups-view .header .btn-col {
+  display: inline-block;
+  width: 400px;
+  vertical-align: middle;
+}
+
+.groups-view .header .btn-col .create-group-btn {
+  background-color: #8854C0;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  width: 145px;
+  cursor: pointer;
+  float: right;
+}
+
+.groups-view .header .btn-col .create-group-btn i {
+  margin-right: 8px;
+}
+
+.groups-view .groups-table {
+  height: calc(100vh - 160px);
+}
+
+.groups-view .header .btn-col .gc-manage-btn {
+  background-color: #fff;
+  color: #292A3A;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-weight: 600;
+  width: 232px;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+.groups-view .groups-table .table-header .cell {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 25%;
+  color: #292A3A;
+  vertical-align: top;
+}
+
+.groups-view .groups-table .table-header {
+  background-color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 50px;
+  border-bottom: 1px solid #f2f2f2;
+  box-sizing: border-box;
+}
+
+.groups-view .groups-table .table-header .cell:nth-child(1) {
+  width: 25%;
+}
+
+.groups-view .groups-table .table-header .cell:nth-child(2) {
+  padding: 16px 0;
+  text-align: center;
+  width: 5%;
+}
+
+.groups-view .groups-table .table-header .cell:nth-child(3) {
+  width: 22%;
+}
+
+.groups-view .groups-table .table-header .cell:nth-child(4) {
+  width: 26%;
+}
+
+.groups-view .groups-table .table-header .cell:nth-child(5) {
+  width: 18%;
+}
+
+.groups-view .groups-table .table-header .cell:nth-child(6) {
+  width: 4%;
+  padding: 16px 0;
+  text-align: center;
+}
+
+.groups-view .groups-table .table-body {
+  height: calc(100% - 50px);
+  background-color: #fff;
+}
+
+.groups-view .groups-table .table-body .groups-list {
+  height: 100%;
+  display: inline-block;
+  width: 25%;
+  border-bottom-left-radius: 8px;
+  border-right: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  position: relative;
+  vertical-align: top;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group {
+  position: relative;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .footer {
+  margin-top: 16px;
+}
+
+.get-link-btn {
+  background-color: #ede6f6;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  color: #8854C0;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .footer .get-link-btn:hover {
+  color: #fff;
+  background-color: #8854C0;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group.active {
+  background-color: #f8f8f8;
+  font-weight: 700;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group.active .color {
+  background-color: hsl(0, 94%, 51%) !important;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .footer {
+  margin-top: 16px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .color {
+  position: absolute;
+  width: 8px;
+  height: calc(100% - 4px);
+  top: 2px;
+  left: 0;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .num-students {
+  font-size: 12px;
+  color: #73747e;
+  font-style: italic;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .menu-container {
+  display: inline-block;
+  font-size: 12px;
+  color: #292A3A;
+  text-align: center;
+  line-height: 12px;
+  width: calc(4% * 1.33);
+  box-sizing: border-box;
+  vertical-align: middle;
+  cursor: pointer;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 12px;
+  right: 0;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .menu-container .menu .menu-list .menu-item:hover {
+  background-color: #f2f2f2;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .menu-container .menu-btn {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .menu-container .menu-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.far {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 400;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group:first-child .menu-container .menu {
+  top: 24px;
+  bottom: unset;
+  transform-origin: top right;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .menu-container .menu .menu-list {
+  list-style-type: none;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .menu-container .menu .menu-list .menu-item {
+  line-height: 32px;
+  font-size: 12px;
+  color: #292A3A;
+  padding: 0 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.groups-view .groups-table .table-body .students-list .students-list-container {
+  margin-top: 32px;
+}
+
+
+.groups-view .groups-table .table-body .students-list .student {
+  cursor: pointer;
+}
+
+.groups-view .groups-table .table-body .students-list .student .checkbox-container {
+  display: inline-block;
+  text-align: center;
+  width: calc(5% * 1.333);
+  padding: 16px 0;
+  box-sizing: border-box;
+  vertical-align: middle;
+  line-height: 14px;
+}
+
+.groups-view .groups-table .table-body .students-list .student .name {
+  display: inline-block;
+  font-size: 14px;
+  color: #292A3A;
+  width: calc(22% * 1.333);
+  padding: 16px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.groups-view .groups-table .table-body .students-list .student .email {
+  display: inline-block;
+  font-size: 12px;
+  color: #292A3A;
+  width: calc(26% * 1.333);
+  padding: 16px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .menu-container .menu .menu-list .menu-item i {
+  margin-right: 8px;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .menu-container .menu .menu-list .menu-item .text {
+  display: inline-block;
+}
+
+
+.groups-view .groups-table .table-body .students-list .student .email .grayed {
+  font-style: italic;
+  color: #b9b9be;
+  font-size: 13px;
+}
+
+.groups-view .groups-table .table-body .students-list .student .notify {
+  display: inline-block;
+  width: calc(18% * 1.333);
+  padding: 16px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.groups-view .groups-table .table-body .students-list .student .menu-container {
+  display: inline-block;
+  font-size: 12px;
+  color: #292A3A;
+  text-align: center;
+  line-height: 12px;
+  width: calc(4% * 1.33);
+  box-sizing: border-box;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+}
+
+.groups-view .groups-table .table-body .students-list .student .menu-container .menu-btn,
+.groups-view .groups-table .table-body .students-list .student .menu-container .delete-member-btn {
+  width: 30px;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+}
+
+.groups-view .groups-table .table-body .students-list .student .menu-container .menu {
+  width: 170px;
+  position: absolute;
+  z-index: 99;
+  top: 24px;
+  right: 4px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px 0 rgb(0 0 0 / 10%), 0 1px 3px 0 rgb(0 0 0 / 10%);
+  cursor: pointer;
+  transform: scale(0.0001);
+  transform-origin: top right;
+  transition: 0.1s ease-in-out;
+}
+
+.groups-view .groups-table .table-body .students-list .student .menu-container .menu.show {
+  transform: scale(1);
+}
+
+.groups-view .groups-table .table-body .students-list .student .menu-container .menu .menu-list {
+  list-style-type: none;
+}
+
+.groups-view .groups-table .table-body .students-list .student .menu-container .menu .menu-list .menu-item {
+  line-height: 32px;
+  font-size: 12px;
+  color: #292A3A;
+  padding: 0 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.groups-view .groups-table .table-body .students-list .student .menu-container .menu .menu-list .menu-item:hover {
+  background-color: #f2f2f2;
+}
+
+.groups-view .groups-table .table-body .students-list .student .menu-container .menu .menu-list .menu-item .text {
+  display: inline-block;
+}
+
+.groups-view .groups-table .table-body .students-list .student:not(.deactivated):hover {
+  background-color: #f8f8f8;
+}
+
+.groups-view .groups-table .table-body .students-list .student .menu-container .menu-btn:hover,
+.groups-view .groups-table .table-body .students-list .student .menu-container .delete-member-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .menu-container .menu {
+  width: 170px;
+  position: absolute;
+  z-index: 99;
+  top: 24px;
+  right: 4px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px 0 rgb(0 0 0 / 10%), 0 1px 3px 0 rgb(0 0 0 / 10%);
+  cursor: pointer;
+  transform: scale(0.0001);
+  transform-origin: top right;
+  transition: 0.1s ease-in-out;
+}
+
+.groups-view .groups-table .table-body .groups-list .groups .group .menu-container .menu.show {
+  transform: scale(1);
+  display: block;
+}
+
+.groups-view .groups-table .table-body .students-list {
+  width: 75%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.update-member-modal .kr-modal-container {
+  max-width: 412px;
+  border-radius: 8px;
+}
+
+.kr-modal-body .header .title {
+  font-weight: 600;
+  font-size: 18px;
+  color: #292A3A;
+}
+
+#cdk-overlay-0 {
+  width: 35%;
+}

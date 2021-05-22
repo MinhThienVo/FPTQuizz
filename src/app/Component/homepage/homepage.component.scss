@@ -1,0 +1,222 @@
+.app-container .page-container {
+    position: relative;
+    transition: 0.2s all ease-in-out;
+}
+.app-container .page-container {
+    position: relative;
+    padding-top: 0px;
+    margin-left: 0px;
+    width: calc(100%);
+    transition: 0.2s all ease-in-out;
+}
+.app-spinner-container{
+    position:fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 99999;
+}
+.kr-anim-spin{
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: spin;
+}
+.marketing-header2-container{
+    position:fixed;
+    height: 80px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background-color: #fff;
+    z-index: 999;
+}
+.marketing-header2-container .scrolled {
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 5%), 0px 4px 12px rgb(0 0 0 / 5%);
+}
+.header-main{
+    width: 100%;
+    height: 100%;
+}
+.header-top-bar{
+    box-sizing: border-box;
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 72px;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-logo{
+    display: inline-block;
+    text-decoration: none;
+    height: 32px;
+    margin-right: auto;
+}
+.header-logo>img{
+    height: 100%;
+}
+.page-tabs-bar {
+    display: block;
+    height: 64px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+.page-tab .page-tab-work{
+    margin-right: 16px;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+.page-tab .page-tab-teachers{
+    margin-right: 16px;
+}
+.page-tab .page-tab-schools{
+    margin-right: 16px;
+}
+.page-tab{
+    display: inline-block;
+    font-family: "Quicksand";
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    color: #461A42;
+    transition: all 0.1s ease;
+}.header-btn{
+    display: inline-block;
+    font-family: "Quicksand";
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    color: #461A42;
+    transition: all 0.1s ease;
+}
+.header-btn-tray{
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header-btn.btn-signup{
+    background-color: #5d2057;
+    color: #fff;
+    border-radius: 12px;
+    padding: 12px 24px;
+}
+.header-btn.btn-login{
+    background-color: #a83999;
+    color: #fff;
+    border-radius: 12px;
+    padding: 12px 24px;
+}
+.btn-login>i{
+    margin-left: 10px;
+}
+.far{
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+.fa-angle-right:before {
+    content: "";
+}
+.fas {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900;
+}
+.header-burger{
+    outline: 0;
+    border: 0;
+    padding: 0 6px;
+    font-size: 24px;
+    font-weight: 900;
+    color: #461A42;
+    background-color: #fff;
+    display: none;
+}
+.hiden{
+    display: none !important;
+}
+.home-page-view button {
+    font-family: "Quicksand" !important;
+}
+.home-page-container{
+    background-color: #fff;
+}
+#page-hero{
+    position: relative;
+    overflow-y: hidden;
+}
+
+.hero-bg-layer{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+}
+.hero-content {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 64px;
+    padding-top: 64px;
+    padding-bottom: 240px;
+}
+.hero-title{
+    max-width: 480px;
+    margin-bottom: 16px;
+    font-size: 64px;
+    font-weight: bold;
+    color: #461A42;
+    line-height: 100%;
+} .hero-description {
+    max-width: 480px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #73747e;
+}
+.hero-image-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 802px;
+    height: 553px;
+}
+.hero-image-wrapper>img {
+    height: 100%;
+}
+.hero-bottom-content {
+    box-sizing: border-box;
+    position: absolute;
+    left: 64px;
+    bottom: 32px;
+    width: 344px;
+    height: 88px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+}

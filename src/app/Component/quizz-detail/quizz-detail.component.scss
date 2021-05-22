@@ -1,0 +1,181 @@
+.my-quizz-container {
+  background-color: white;
+  border: white;
+  // margin: 10px 10px 30px 10px;
+}
+.dataQuiz {
+  display: inline-block;
+  width: calc(100% - 120px);
+  padding-left: 24px;
+  box-sizing: border-box;
+  text-align: left;
+  margin: auto;
+}
+.changeBGcolor {
+  background-color: khaki;
+}
+input,
+textarea,
+select,
+button {
+  font-family: "Open Sans", sans-serif, Helvetica, Arial;
+}
+.changebg {
+  background-color: aqua;
+}
+
+.questions-length,
+.grades,
+.played {
+  display: inline-block;
+  margin-right: 14px;
+}
+
+.action-bton {
+  padding: 1px 8px;
+  margin: 0px 5px;
+  background-color: white;
+  border: 1px solid #eeeeee;
+  z-index: 1;
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+  position: relative;
+}
+
+.action-bton.like:hover {
+  color: red;
+}
+
+.action-bton.save:hover {
+  color: blue;
+}
+
+.quizz {
+  z-index: 0;
+}
+
+input.ckbAnswer {
+  width: 15px;
+  height: 15px;
+}
+.quizz:hover {
+  background-color: #f5f5f5;
+}
+// .collection-container .card {
+//   margin: 10px;
+//   padding: 0px;
+// }
+// //
+// #headingOne {
+//   padding: 0px;
+// }
+
+// .collection-title-img {
+//   display: inline-block;
+//   margin-right: 16px;
+//   width: 24px;
+//   height: 24px;
+//   margin-top: -4px;
+//   background-image: url(https://cf.quizizz.com/beta/images/dashboard-sprites1.png);
+//   background-position: 0 -192px;
+// }
+
+// .collections-list li {
+//   list-style-type: none;
+// }
+
+// .collections-list button {
+//   display: block;
+//   width: 100%;
+//   text-align: left;
+//   padding: 12px 8px;
+//   font-size: 14px;
+//   cursor: pointer;
+//   position: relative;
+//   color: #292a3a;
+//   border: none;
+//   background-color: transparent;
+//   margin: 0;
+//   box-sizing: border-box;
+// }
+
+// .collections-list button:hover,
+// .collections-list button selected {
+//   font-weight: 600;
+//   background-color: rgba(0, 0, 0, 0.05);
+// }
+
+// .collections-list button:focus {
+//   outline: none !important;
+//   border: none !important;
+// }
+
+// .user-collections .num-items {
+//   float: right;
+// }
+
+// .actions {
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   bottom: 0;
+//   margin: auto;
+//   height: 32px;
+//   display: none;
+// }
+
+// .action-btn {
+//   padding: 0 0 0 8px !important;
+//   width: 32px;
+//   border-radius: 50%;
+//   text-align: center;
+//   line-height: 32px;
+//   height: 32px;
+//   vertical-align: middle;
+//   margin: 0 4px;
+// }
+
+// .btnn:hover .actions,
+// .action-btn {
+//   box-shadow: 0 0 2px rgb(0 0 0 / 12%), 0 2px 2px rgb(0 0 0 / 15%);
+//   display: inline-block;
+// }
+
+// .action-btn:hover {
+//   transform: scale(1.2);
+// }
+
+// .my-quizz-container .imgQuiz {
+//   height: 120px;
+//   width: 120px;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   float: left;
+// }
+
+// .act {
+//   display: none;
+//   right: 3px;
+//   top: 7px;
+//   position: absolute;
+//   vertical-align: middle;
+// }
+
+// .act-btn {
+//   display: inline;
+//   position: absolute;
+//   padding: 0px 8px 12px 9px !important;
+//   width: 32px !important;
+//   line-height: 32px !important;
+//   height: 32px !important;
+//   vertical-align: middle;
+//   float: left;
+//   border-radius: 50%;
+// }
+
+// .btnn:hover .act {
+//   display: inline-block;
+//   background-color: #f2f2f2;
+// }

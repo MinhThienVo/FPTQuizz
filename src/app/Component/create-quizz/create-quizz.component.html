@@ -1,0 +1,336 @@
+<h3>Create Quizz</h3>
+<mat-card class="d-flex">
+  <div style="width:25%;border-right: 1px solid;">
+    <h4>Choose Subject</h4>
+    <mat-tree [dataSource]="datasourceTree" [treeControl]="treeControl">
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <button mat-icon-button disabled></button>
+        <!-- <button mat-stroked-button color="primary"> {{node.Name}}</button> -->
+        <!-- day là menu con -->
+        <!--  -->
+        <button mat-button class="btn_active" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"
+          [ngClass]="nodeIsChoose == node.ID? 'changeBGcolor':''">
+          <!-- hover class nay se doi mau -->
+          <div style="font-size: 18px;">
+            <i class="fal fa-folder-tree" style="margin-right: 10px;"></i>{{node.Name}}
+          </div>
+          <!-- <mat-icon>more_vert</mat-icon> -->
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="ChooseSubject(node.ID,node.Name);nodeIsChoose=node.ID">
+            <mat-icon>control_point</mat-icon>
+            <span>Create Quizz</span>
+          </button>
+          <button mat-menu-item [routerLink]="['/admin/question-create',node.ID,node.Name]"
+            (click)="addQuestionInPool(node.ID)">
+            <mat-icon>control_point</mat-icon>
+            <span>Add Question</span>
+          </button>
+        </mat-menu>
+      </mat-tree-node>
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+        </button>
+
+        <!-- day là menu  -->
+        <button mat-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"
+          [ngClass]="nodeIsChoose == node.ID? 'changeBGcolor':''">
+          <div style="font-size: 18px;">
+            <i class="fal fa-folder-tree" style="margin-right: 10px;"></i>{{node.Name}}
+          </div>
+          <!-- <mat-icon>more_vert</mat-icon> -->
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="ChooseSubject(node.ID,node.Name);nodeIsChoose=node.ID">
+            <mat-icon>control_point</mat-icon>
+            <span>Create Quizz</span>
+          </button>
+          <button mat-menu-item [routerLink]="['/admin/question-create',node.ID,node.Name]"
+            (click)="addQuestionInPool(node.ID)">
+            <mat-icon>control_point</mat-icon>
+            <span>Add Question</span>
+          </button>
+        </mat-menu>
+      </mat-tree-node>
+    </mat-tree>
+  </div>
+  <div style="width:75%" *ngIf="hidediv">
+    <h4 style="margin-left: 3%;">Quizz</h4>
+    <mat-card-content>
+      <div class="row" style="margin-left: 3%;">
+        <mat-label class="col-md-3">Subject </mat-label>
+        <div class="col-md-9" style="line-height: 56px; font-weight: bold;">
+          <input style="font-size: 20px;
+        text-align: left;" type="text" matInput readonly [value]="nameSubject">
+        </div>
+        <!-- <mat-form-field appearance="outline" class="col-md-9">
+
+        </mat-form-field> -->
+      </div>
+    </mat-card-content>
+    <!-- stepp -->
+    <mat-horizontal-stepper #stepper [linear]="true">
+      <!-- step 1  -->
+      <mat-step [editable]="true" [completed]="step1Completed">
+        <ng-template matStepLabel>Create Quizz</ng-template>
+        <mat-card style="box-shadow: unset;">
+          <mat-card-content>
+            <div class="row">
+              <mat-label class="col-md-3">Exam title
+                <span class="erro">(*)</span>
+              </mat-label>
+              <div class="col-md-9">
+                <mat-form-field appearance="outline" style="padding-bottom: 10px; min-width: 100%;">
+                  <input type="text" class="inputs" matInput placeholder="Vd: Thi THPT Quốc gia, Thi Toeic....."
+                    [formControl]="tieudebaithi" [(ngModel)]="tieude" minlength="5" maxlength="200">
+                  <mat-error class="mat-erro" *ngIf="tieudebaithi.invalid">
+                    <label *ngIf="tieudebaithi.invalid">
+                      {{getErrorMessagetieudebaithi()}}
+                    </label>
+                  </mat-error>
+                </mat-form-field>
+
+              </div>
+              <!-- <div class="col-md-3"></div>
+              <div class="col-md-9">
+              </div> -->
+              <!--  -->
+              <!-- /// -->
+              <!-- <mat-label class="col-md-3">Exam title
+                <span class="erro">(*)</span>
+              </mat-label>
+              <div appearance="outline" class="col-md-9">
+                <div [ngxSummernote]="config" [ngxSummernoteView]="tieude"
+                  placeholder="Vd: Thi THPT Quốc gia, Thi Toeic....." minlength="5" maxlength="250" [(ngModel)]="tieude"
+                  required #validationContent="ngModel">
+                </div>
+              </div> -->
+              <!-- /// -->
+              <mat-label class="col-md-3"> Exam time (minute) <span class="erro">(*)</span></mat-label>
+              <mat-form-field appearance="outline" class="col-md-9" style="padding-bottom: 10px;">
+                <mat-select [formControl]="timeoftest">
+                  <mat-option (click)="getnumber(item)" *ngFor="let item of listNumber" value="number">
+                    {{item}}
+                  </mat-option>
+                </mat-select>
+                <mat-error class="mat-erro" *ngIf="timeoftest.invalid">
+                  {{getErrorMessageTimeofTest()}}</mat-error>
+              </mat-form-field>
+              <mat-label class="col-md-3"> Tag <span class="erro">(*)</span></mat-label>
+              <mat-form-field appearance="outline" class="col-md-9">
+                <mat-chip-list #chipList aria-label="Tag selection">
+                  <mat-chip *ngFor="let fruit of tags" [selectable]="selectable" [removable]="removable"
+                    (removed)="remove(fruit)">
+                    {{fruit.Content}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                  <input class="inputs" required placeholder="New tags..." [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="add($event)" [formControl]="tag">
+                </mat-chip-list>
+                <mat-error class="mat-erro" *ngIf="tag.invalid">{{getErrorMessage}}</mat-error>
+
+              </mat-form-field>
+
+              <!-- image -->
+              <div class="col-md-3" style="line-height: revert !important;">
+                <label class="i">Image Quizz</label>
+              </div>
+              <div class="col-md-9">
+                <input type="file" style="width: 100%;" (change)="onFileSelected($event)">
+              </div>
+              <!-- image -->
+              <div class="col-md-3" style="line-height: revert !important;">
+                <label class="i">Is Public?</label>
+              </div>
+              <div class="col-md-9">
+                <mat-slide-toggle name="toggle" [checked]="IsPrivate == true" [value]="true" (change)="checkIsPublic()"
+                  [(ngModel)]="IsPrivate"></mat-slide-toggle>
+                <!-- <input type="checkbox" name="answer" [checked]="IsPrivate == true" [value]="true"
+                  (change)="checkIsPublic()" [(ngModel)]="IsPrivate"> -->
+              </div>
+              <mat-label class="col-md-3" style="line-height:154px !important;">Description</mat-label>
+              <div appearance="outline" class="col-md-9">
+                <div [ngxSummernote]="config" [ngxSummernoteView]="mota"
+                  placeholder="Vd: Thi THPT Quốc gia, Thi Toeic....." minlength="5" maxlength="250" [(ngModel)]="mota"
+                  required #validationContent="ngModel">
+                </div>
+                <!-- <textarea rows="7" cols="" matInput placeholder="Description" class="inputs" type="text"
+                  style="height:100px" [(ngModel)]="mota"></textarea> -->
+              </div>
+              <div class="col-md-3"></div>
+              <div class="col-md-9">
+                <button mat-raised-button color="primary" style="margin-top: 10px;"
+                  [disabled]="tieudebaithi.invalid || timeoftest.invalid || tag.invalid"
+                  (click)="addQuizz(stepper)">Next
+                </button>
+              </div>
+              <div class="col-md-3"></div>
+              <div class="col-md-9">
+                <mat-progress-bar mode="indeterminate" style="margin-top: 10px;" *ngIf="progress_bar">
+                </mat-progress-bar>
+              </div>
+              <!-- <div *ngIf="erromessagename" style="color: red; font-size: 16px !important;">
+                Exam title already exist !!!
+              </div> -->
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <div>
+        </div>
+      </mat-step>
+      <!-- Step 2 -->
+      <mat-step [completed]="step2Completed">
+        <ng-template matStepLabel> Create Parts</ng-template>
+        <!-- <div row> -->
+        <div cdkDropList cdkDrop class="example-list" [cdkDropListData]="datapart"
+          (cdkDropListDropped)="ondrop($event)">
+          <div *ngFor="let item of datapart" cdkDrag class="example-box">
+            <button class="btn-primary btnn" mat-button
+              style="width: 100%; text-align:left;border: 1px solid;margin-bottom: 5px;"
+              [matMenuTriggerFor]="menu_part">
+              <i class="fas fa-folder"></i>
+              <span style="margin-left: 10px"></span>
+              <mat-label>{{item.Name}}</mat-label>
+            </button>
+            <mat-menu #menu_part="matMenu" xPosition="before">
+              <button mat-menu-item (click)="getIdPart(item.ID,stepper)"> <i class="fas fa-plus-circle mr-14"></i>
+                Create
+                Question</button>
+              <button mat-menu-item (click)="openDialogEditPart(item.ID)"><i class="far fa-edit mr-1"></i> Edit
+                Part</button>
+              <button mat-menu-item (click)="openDialogDeletePart(item.ID)"><i class="far fa-trash-alt mr-1"></i>
+                Delete
+                Part</button>
+            </mat-menu>
+          </div>
+        </div>
+        <!-- </div> -->
+        <button mat-raised-button color="primary" (click)="createPart()" style="margin-top: 8px;"><i
+            class="fas fa-folder-plus mr-1"></i> Add Part</button>
+        <!-- </div> -->
+        <hr>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <!-- <button mat-button matStepperNext>Next</button> -->
+        </div>
+      </mat-step>
+      <!-- step 3 -->
+      <mat-step>
+        <ng-template matStepLabel>Create Question</ng-template>
+        <div class="row">
+          <div class="col-md-12" style="margin-bottom: 10px;">
+            <button class="btn btn-primary" (click)="ScrollQuestion()" id="scrollDetail"><i class="fa fa-list mr-1"
+                aria-hidden="true"></i> Question list</button>
+            <button style="float: right;" class="btn btn-primary" (click)="openDialogAddQuestionPool()"> <i
+                class="fa fa-plus mr-1" aria-hidden="true"></i>Add
+              Question pool
+            </button>
+          </div>
+          <mat-label class="col-md-3">Question<span class="erro">(*)</span></mat-label>
+          <div appearance="outline" class="col-md-9">
+            <div [ngxSummernote]="config" [ngxSummernoteView]="questionnew.Content" [(ngModel)]="questionnew.Content"
+              required #validationContent="ngModel">
+            </div>
+            <!-- <mat-error class="mat-erro" *ngIf="validationContent.invalid">{{getErrorMessage}}</mat-error> -->
+          </div>
+        </div>
+        <!-- Answer -->
+        <div class="row mb-2" *ngFor="let item of questionnew.ListAnswer;let index = index;" required>
+          <mat-label class="col-md-3 d-flex align-items-center">Answer {{index + 1}} </mat-label>
+          <div appearance="outline" class="col-md-9">
+            <div class="row row-answer m-0">
+              <div class="col-md-2 d-flex align-items-center" style="font-size: 18px;">
+                <input type="radio" name="CheckIsTrueAnswer" [checked]="item.IsTrueAnswer == true" [id]="index"
+                  [value]="true" (change)="checkAnswerTrue(index)" [(ngModel)]="item.IsTrueAnswer"
+                  style="margin-right: 10px;" required #CheckIsTrueAnswer="ngModel">
+                Correcte
+              </div>
+              <div class="col-md-9 pr-0">
+                <div [ngxSummernote]="config" [ngxSummernoteView]="item.Content" [(ngModel)]="item.Content" required
+                  #validationAnswer="ngModel">
+                </div>
+                <!-- validation -->
+                <!-- <label *ngIf="validationAnswer.invalid &&validationAnswer.touched "></label> -->
+                <!--  -->
+              </div>
+              <div class="col-md-1" style="padding: 0px;">
+                <button style="text-align: center;margin-top:5px;margin-left:4px;" class="btn btn-exit"
+                  (click)="removeAnswer(index)"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <!-- <mat-error class="mat-erro" *ngIf="validationAnswer.invalid">{{getErrorMessage}}</mat-error> -->
+          </div>
+        </div>
+        <button (click)="addAnswer()" class="btn btn-primary"><i class="fa fa-plus mr-1" aria-hidden="true"></i>More
+          Answer</button>
+        <div class="row">
+          <button mat-raised-button color="primary" style="margin: auto;" (click)="addQuestion()"
+            [disabled]="questionnew.Content ==='' ">
+            <label *ngIf="questionnew.ID == undefined" class="m-0"><i class="fa fa-plus-circle mr-1"
+                aria-hidden="true"></i>Add Question</label>
+            <label *ngIf="questionnew.ID != undefined" class="m-0"><i class="fa fa-pencil-square-o mr-1"
+                aria-hidden="true"></i>Save changes</label>
+          </button>
+        </div>
+        <mat-progress-bar mode="indeterminate" style="margin-top: 10px;margin-bottom: 10px;"
+          *ngIf="progress_bar_answer">
+        </mat-progress-bar>
+
+        <!-- </table>  -->
+        <mat-form-field id="scroll">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+        </mat-form-field>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;box-shadow: unset;">
+          <!-- Position Column -->
+          <ng-container matColumnDef="No" style="width:5%; text-align: left !important;">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element; let i = index;"> {{i+ 1}} </td>
+          </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="Question" style="width:85%; text-align: left !important;">
+            <th mat-header-cell *matHeaderCellDef> Question </th>
+            <div>
+              <td mat-cell *matCellDef="let element" [innerHtml]="element.Content">{{element.Content}}</td>
+            </div>
+          </ng-container>
+          <ng-container matColumnDef="symbol" style="width:10%;">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element; let i = index" style="float: right;">
+              <button class="btn btn-primary" (click)="detailQuestion(element.ID,i);ScrollDetailQuestion()"><i
+                  class="far fa-edit"></i> Edit /
+                Detail</button>
+              <!-- <button class="btn btn-primary" (click)="deleteQuestion(element.ID,i)" style="margin-left: 20px;"><i
+                  class="fa fa-trash" aria-hidden="true"></i> Delete </button> -->
+              <button class="btn btn-primary" (click)="openDialogDeleteQuestion(element.ID)"
+                style="margin-left: 20px;"><i class="far fa-trash-alt mr-1"></i>
+                Delete
+              </button>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+        <!-- //table??? -->
+        <div class="mt-1 ml-1">
+          <button mat-button matStepperPrevious>Back</button>
+          <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+          <button class="btn btn-primary" [routerLink]="['//admin/detail',questionnew.Content,idquizz]"> Test
+            Exam</button>
+        </div>
+      </mat-step>
+      <!-- //modal? -->
+
+      <!-- // -->
+    </mat-horizontal-stepper>
+  </div>
+</mat-card>
+<div style="height:50px;"></div>

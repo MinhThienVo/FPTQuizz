@@ -1,0 +1,15 @@
+<div>
+  <div class="">
+    <label style="margin-left: 20px;font-size: 20px;font-weight: bold">Delete Question</label>
+    <hr>
+  </div>
+  <div>
+    <label>Are you sure you want to delete question : <span [innerHTML]="name"></span>'{{name}}'? </label>
+    <br>
+    <br>
+  </div>
+  <div style="text-align: right">
+    <button mat-button (click)="onCancelClick()" class="btn">Cancel</button>
+    <button mat-button class="btn" (click)="onDeleteClick(idQuestion)">Delete</button>
+  </div>
+</div>

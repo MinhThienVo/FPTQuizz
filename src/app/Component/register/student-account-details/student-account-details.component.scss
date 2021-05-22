@@ -1,0 +1,39 @@
+.main-div {
+    margin-top: 1px;
+    background-color: #461A42;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+button {
+    margin: 10px;
+}
+mat-card {
+    margin-top: 50px;
+    padding: 50px 20px 20px 20px;
+    border: none;
+}
+.dob {
+    margin: 5px;
+}
+mat-form-field {
+    display: flex;
+    flex-direction: column;
+
+}
+.sizeinvalid{
+  font-size: 15px !important;
+}
+mat-error{
+  font-size: 16px;
+}
+mat-label{
+  font-size: 16px;
+}
+mat-datepicker-toggle{
+  font-size: 16px;
+}
+
+

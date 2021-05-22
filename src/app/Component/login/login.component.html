@@ -1,0 +1,64 @@
+<div class="container-fluid" fxFlexFill>
+  <header class="col-xl-12">
+    <div class="main-logo">
+      <a href="/admin">
+        <img style="width: 118px; height: 28px;"
+          src="https://cf.quizizz.com/img/quizizz_logos/white-brandmark-600x164.png">
+      </a>
+    </div>
+  </header>
+  <div class="login-view">
+    <div class="title">
+      <img src="https://cf.quizizz.com/img/icons/auth_icons_2/key.png" alt>
+      <h1>Log in</h1>
+    </div>
+    <div fxLayoutAlign="center center" fxFlexFill class="main-div">
+      <mat-card fxFlex=100>
+        <form fxLayoutAlign="strech" fxLayout="column" class="form-login">
+          <mat-card fxFlex=100>
+
+            <button (click)="loginwithGmail()" #loginRef mat-raised-button color="primary" type="button"
+              class="btn btn-success" style="width:100%"><img style=" height: 26px;float: left;margin-top: 5px;"
+                title="Log gin with Gmail" src="https://cf.quizizz.com/img/icons/google-auth.png" alt="Google logo"> Log
+              in with Gmail</button>
+            <div class="row">
+              <div class="col-5">
+                <hr>
+              </div>
+              <div class="col-2" style="margin-top: 6px;">or</div>
+              <div class="col-5">
+                <hr>
+              </div>
+            </div>
+            <div>
+              <mat-card-subtitle>Email/Username</mat-card-subtitle>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="mothaibabuon@gmail.com" [(ngModel)]="loginmodel.Username" name="username"
+                  maxlength="50" required #username="ngModel" pattern="\s*\S+.*">
+                <mat-error class="error" *ngIf="username.invalid">{{errorUsername}}</mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-card-subtitle>Password</mat-card-subtitle>
+              <mat-form-field appearance="outline">
+                <input pattern="\s*\S+.*" matInput placeholder="*************" [(ngModel)]="loginmodel.Password"
+                  name="password" maxlength="50" type="password" required #password="ngModel">
+                <mat-error class="error" *ngIf="password.invalid">{{errorPassword}}</mat-error>
+              </mat-form-field>
+            </div>
+            <a href="#">
+              <mat-card-subtitle style="color: blue;" title="Forgot password?">Forgot password?</mat-card-subtitle>
+            </a>
+            <button mat-raised-button color="primary" style="width:100%" (click)="userLogin()"
+              [disabled]="loginmodel.Username === '' || loginmodel.Password === ''">Log in</button>
+            <p *ngIf="showMessage" class="showMessage">{{erroLogin}}</p>
+            <div></div>
+            <mat-card-subtitle style="margin-top: 7px;">Don't have an account? <a routerLink="/register">Click
+                Here</a> to sign up
+            </mat-card-subtitle>
+          </mat-card>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>

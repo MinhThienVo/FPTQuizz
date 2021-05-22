@@ -1,0 +1,11 @@
+<div style="margin-bottom: 10px;">
+  <mat-label>Enter part name</mat-label>
+</div>
+<div style="border: 1px solid;border-radius: 4px; height: 50px;margin-bottom: 5px;width: 70%;">
+  <input matInput type="text" [(ngModel)]="part" style="width: 100%;text-align: center;
+  line-height: 50px;">
+</div>
+<div style="text-align: right">
+  <button mat-button (click)="onCancelClick()" class="btn">Cancel</button>
+  <button mat-button class="btn" (click)="onCreateClick();" [disabled]="part === ''">Create</button>
+</div>

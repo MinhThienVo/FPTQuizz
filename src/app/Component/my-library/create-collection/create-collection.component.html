@@ -1,0 +1,33 @@
+<div>
+    <div class="">
+        <img src="https://cf.quizizz.com/img/icons/folder_color.png">
+        <label style="margin-left: 20px;font-size: 20px;font-weight: bold">Create New Collection</label>
+        <hr>
+    </div>
+    <div>
+        <label>Enter collection name</label>
+        <mat-form-field appearance="outline">
+            <input matInput type="text" [(ngModel)]="collectionname" required>
+        </mat-form-field>
+        <!-- <div>
+            <input type="text" name="collectionname" [(ngModel)]="collectionname" required>
+        </div> -->
+        <div>
+            <label>Visibility</label>
+            <br>
+            <!-- <mat-radio-group>
+                <mat-radio-button checked value="Public">Public</mat-radio-button>
+                <mat-radio-button value="Private">Private</mat-radio-button>
+            </mat-radio-group> -->
+            <div>
+                <input type="radio" name="1" checked value=" Public"> Public
+                <input type="radio" name="1" value=" Private"> Private
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: right">
+        <button mat-button (click)="onCancelClick()" class="btn">Cancel</button>
+        <button mat-button class="btn" (click)="onCreateClick()" [disabled]="collectionname === ''">Create</button>
+    </div>
+</div>

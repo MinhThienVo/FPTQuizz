@@ -1,0 +1,62 @@
+<div>
+  <mat-toolbar style="background-color: #461A42; border: 2px solid; box-shadow: 0px 1px 20px black;">
+    <a href="/admin">
+      <img src="https://cf.quizizz.com/img/quizizz_logos/white-brandmark-600x164.png" width="110px" alt="hinh quizz">
+    </a>
+    <span class="example-spacer"></span>
+    <button mat-button routerLink="/login" style="color: white; background-color: #6B4868; margin-right: 50px;">Log
+      In</button>
+  </mat-toolbar>
+</div>
+<div fxLayoutAlign="center start" fxFlexFill class="main-div" style="margin-top: 1px;">
+  <mat-card fxFlex="30">
+    <mat-card-header>
+      <div style="margin: auto;text-align: center">
+        <mat-card-title>Welcome to FPTQuizzes </mat-card-title>
+        <mat-card-subtitle>Please use your school or work email address</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <div style="text-align: center">
+          <button mat-button style="font-size: 18px !important;" (click)="Signupwithgoogle()">
+            <img style=" height: 28px;" src="https://cf.quizizz.com/img/logos/google-logo-1.png" alt="Google logo"> Sign
+            up with Google
+          </button>
+        </div>
+        <!-- <div style="text-align: center;">
+                </div> -->
+        <div class="row">
+          <div class="col-5">
+            <hr>
+          </div>
+          <div class="col-2" style="margin-top: 6px;" style="font-size: 18px;">or</div>
+          <div class="col-5">
+            <hr>
+          </div>
+        </div>
+      </div>
+      <br>
+      <mat-label>Sign up with email</mat-label>
+      <mat-form-field appearance="outline">
+        <i class="far fa-envelop"></i>
+        <input pattern="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$" matInput
+          placeholder="mothaibabon@example.com" [formControl]="formel" maxlength="50" required [(ngModel)]="email">
+        <mat-error *ngIf="formel.invalid">{{getErrorMessage()}}</mat-error>
+        <!-- <mat-error *ngIf="checkUserName" style="color: red; font-size: 16px;">Email already exists</mat-error> -->
+      </mat-form-field>
+      <br>
+
+      <!-- [routerLink]="['/choose-roll',email]" -->
+      <button mat-raised-button style="width: 100%; background-color: #8753BF; color: white" [disabled]="formel.invalid"
+        (click)="signup()">Next</button>
+
+      <div style="text-align: center; width: 80%; margin: auto">
+        <mat-card-subtitle style="width: 100%;margin-top: 10px;">
+          By signing up, you agree to our <a href="/term-of-service">Terms of Service</a> and <a
+            href="/privacy-policy">Privacy Policy</a>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,17 @@
+<div class="kr-modal-body">
+  <div class="header">
+    <div class="msg">
+      <div class="title">Create a new class</div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="field main-field"><label> Enter class name </label><input (change)="nameClasses($event)" type="text"
+        id="name" placeholder="Try 'Period 4' or 'Math club'" class="" [value]="nameData">
+      <!-- <div class="err hidden" *ngIf="hideClass">Please enter the class name</div> -->
+    </div>
+  </div>
+  <div class="footer">
+    <div class="cancel-btn hidden" (click)="onNoClick()">Cancel</div>
+    <div class="create-group-btn" (click)="createClaess()"> Create class </div>
+  </div>
+</div>

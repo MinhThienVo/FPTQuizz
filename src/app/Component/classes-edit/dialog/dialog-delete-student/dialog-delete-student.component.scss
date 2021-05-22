@@ -1,0 +1,54 @@
+.header {
+  font-weight: 600;
+  font-size: 24px;
+  color: #292A3A;
+  margin-bottom: 6px;
+}
+
+
+.msg {
+  font-weight: 600;
+  font-size: 16px;
+  color: #292A3A;
+}
+
+.footer {
+  margin-top: 24px;
+  text-align: right;
+}
+
+.cancel-btn {
+  padding: 8px 16px;
+  color: rgba(41, 42, 58, 0.66);
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.action-btn.remove {
+  background-color: #fcdbe3;
+  color: #ec0b43;
+}
+
+.cancel-btn:hover {
+  background-color: #f2f2f2;
+}
+
+.action-btn:hover {
+  box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 10%);
+}
+
+.action-btn {
+  padding: 8px 16px;
+  color: rgba(41, 42, 58, 0.66);
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #fdf2df;
+  color: #292A3A;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+}

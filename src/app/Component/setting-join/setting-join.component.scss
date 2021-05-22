@@ -1,0 +1,303 @@
+
+
+.settings-page-heading[data-v-2bb53aca] {
+    font-size: 24px;
+    font-weight: 400;
+    color: #292a3a;
+
+}
+.settings-page {
+    max-width: 1366px;
+    padding: 0 50px 50px 50px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+}
+.settings-page-content{
+    // min-height: 100vh;
+    // padding: 16px 16px 84px 16px;
+    position: relative;
+    z-index: 2;
+}
+.settings-page-topbar{
+    text-align: center;
+    margin-bottom: 16px;
+}
+.settings-page-heading{
+    font-size: 24px;
+    font-weight: 400;
+    color: #292a3a;
+}
+.settings-group-container {
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+    margin-bottom: 16px;
+    padding: 12px 12px 16px 12px;
+    background-color: #fff;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 4px 0 0 #e5e5e5;
+    box-shadow: 0 4px 0 0 #e5e5e5;
+}
+.settings-group-topbar {
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+.settings-group-container button:focus {
+    outline: none;
+}
+
+.icon-fas-user-edit:before {
+    content: "\F4FF";
+}
+#editprofile {
+    color: #efa929;
+}
+.settings-group-heading {
+    display: inline-block;
+    margin-left: 8px;
+    font-weight: 400;
+    color: #9d9da4;
+    font-size: 16px;
+}
+button.settings-input-container {
+    cursor: pointer;
+}
+.settings-input-container[data-v-2bb53aca] {
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+.strip-default-btn-style {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.strip-default-btn-style, .text-unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.settings-input-title[data-v-2bb53aca] {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left !important;
+    color: #292a3a;
+}
+.settings-input-content {
+    text-align: left;
+    font-size: 14px;
+    color: #9d9da4;
+}
+button, input, textarea {
+    font-family: Quicksand,Helvetica,Arial;
+}
+body, html {
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    font-family: Quicksand,Helvetica,Arial;
+    font-size: 16px;
+    font-weight: 400;
+}
+button {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
+    cursor: default;
+    font: 400 13.3333px Arial;
+}
+button.settings-input-container[data-v-2bb53aca] {
+    cursor: pointer;
+}
+
+.settings-input-container[data-v-2bb53aca] {
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+
+.settings-input-container.has-chevron[data-v-2bb53aca]:hover:after {
+    color: #ebb130;
+}
+
+.strip-default-btn-style {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.strip-default-btn-style, .text-unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+button, input, textarea {
+    font-family:Helvetica, Quicksand,Arial;
+}
+
+
+button {
+    appearance: auto;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    // border-image: initial;
+}
+
+body {
+    font-family: Quicksand,Helvetica,Arial;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+body, html {
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+// .settings-input-container.has-chevron[data-v-2bb53aca]:after {
+//     font-family: Quizizz-Iconset;
+//     content: "\E913";
+//     color: #9d9da4;
+//     font-size: 12px;
+//     position: absolute;
+//     right: 0;
+// }
+.settings-footer[data-v-2bb53aca] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+body {
+    font-family: Quicksand,Helvetica,Arial;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+body, html {
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+.settings-footer-link[data-v-2bb53aca] {
+    margin-top: 12px;
+    color: #6b6c77;
+    font-size: 14px;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#arrowBottom {
+    color: #9d9d4a;
+    padding-left: 100%;
+}
+#iconaccountsetting{
+
+    color: #e6005c;
+}
+.settings-input-container.has-chevron[data-v-2bb53aca]:after {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f105";
+    color: #9d9da4;
+    font-size: 16px;
+    position: absolute;
+    right: 0;
+}
+

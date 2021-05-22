@@ -1,0 +1,78 @@
+.collection {
+    display: inline-block;
+    width: 224px;
+    height: 224px;
+    background-color: #7D72EC;
+    border-radius: 4px;
+    margin: 20px;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%), 0 1px 3px rgb(0 0 0 / 10%);
+}
+
+.collection:hover {
+    box-shadow: 0 2px 8px 5px rgb(0 0 0 / 20%);
+}
+
+.create-collection-btn i {
+    font-size: 36px;
+    top: 50px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #7D72EC;
+    line-height: 76px;
+    text-align: center;
+}
+
+.create-collection-btn .title {
+    position: absolute;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 40px;
+    font-size: 16px;
+}
+
+.details-wrapper {
+    margin-top: 62px;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.subject-name {
+    padding: 2px 0;
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.num-quizzes {
+    padding: 2px 0;
+    font-size: 12px;
+}
+
+mat-button {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 12px;
+}
+
+mat-button:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+mat-button:focus {
+    outline: none !important;
+    border: none !important;
+}

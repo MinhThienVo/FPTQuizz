@@ -1,0 +1,106 @@
+<mat-card>
+  <mat-card-content>
+    <h2>Add {{nameSub}} Question </h2>
+    <!-- <p>({{tieude}}) </p> -->
+    <div class="mb-2">
+      <button class="btn btn-primary" style="margin-right: 10%;" (click)="ScrollQuestion()">
+        Question list
+      </button>
+      <button style="float: right;" class="btn btn-primary" (click)="openDialogAddQuestionPool()"> <i
+          class="fa fa-plus mr-1" aria-hidden="true"></i>Add
+        Question pool
+      </button>
+    </div>
+    <div class="row">
+      <mat-label class="col-md-3" id="scrollDetail">Question<span class="erro">(*)</span></mat-label>
+      <div appearance="outline" class="col-md-9">
+        <div [ngxSummernote]="config" [ngxSummernoteView]="questionnew.Content" [(ngModel)]="questionnew.Content"></div>
+
+      </div>
+    </div>
+
+    <div class="row mb-2" *ngFor="let item of questionnew.ListAnswer;let index = index;" required>
+      <mat-label class="col-md-3 d-flex align-items-center">Answer {{index + 1}} </mat-label>
+      <div appearance="outline" class="col-md-9">
+        <div class="row row-answer m-0">
+          <div class="col-md-2 d-flex align-items-center" style="font-size: 18px;">
+            <input type="radio" name="CheckIsTrueAnswer" [checked]="item.IsTrueAnswer == true" [id]="index"
+              [value]="true" (change)="checkAnswerTrue(index)" [(ngModel)]="item.IsTrueAnswer"
+              style="margin-right: 10px;" required #CheckIsTrueAnswer="ngModel">
+            Correcte
+          </div>
+          <div class="col-md-9 pr-0">
+            <div [ngxSummernote]="config" [ngxSummernoteView]="item.Content" [(ngModel)]="item.Content" required
+              #validationAnswer="ngModel">
+            </div>
+            <!-- validation -->
+            <!-- <label *ngIf="validationAnswer.invalid &&validationAnswer.touched "></label> -->
+            <!--  -->
+          </div>
+          <div class="col-md-1" style="padding: 0px;">
+            <button style="text-align: center;margin-top:5px;margin-left:4px;" class="btn btn-exit"
+              (click)="removeAnswer(index)"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        <!-- <mat-error class="mat-erro" *ngIf="validationAnswer.invalid">{{getErrorMessage}}</mat-error> -->
+      </div>
+    </div>
+    <button (click)="addAnswer()" class="btn btn-primary"><i class="fa fa-plus mr-1" aria-hidden="true"></i>More
+      Answer</button>
+    <div class="row">
+      <button mat-raised-button color="primary" style="margin: auto;" (click)="addQuestion()"
+        [disabled]="questionnew.Content ==='' ">
+        <i class="fa fa-plus-circle mr-1" aria-hidden="true"></i>Add Question
+        <!-- <label *ngIf="questionnew.ID == undefined" class="m-0"><i class="fa fa-plus-circle mr-1"
+            aria-hidden="true"></i>Add Question</label>
+        <label *ngIf="questionnew.ID != undefined" class="m-0"><i class="fa fa-pencil-square-o mr-1"
+            aria-hidden="true"></i>Save changes</label> -->
+      </button>
+    </div>
+    <mat-progress-bar mode="indeterminate" style="margin-top: 10px;margin-bottom: 10px;" *ngIf="progress_bar_answer">
+    </mat-progress-bar>
+
+    <div style="height: 50px;"></div>
+
+    <mat-form-field id="scroll">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;box-shadow: unset;">
+      <!-- Position Column -->
+      <ng-container matColumnDef="No" style="width:5%; text-align: left !important;">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element; let i = index;"> {{i+ 1}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="Question" style="width:85%; text-align: left !important;">
+        <th mat-header-cell *matHeaderCellDef> Question </th>
+        <div>
+          <td mat-cell *matCellDef="let element" [innerHtml]="element.Content">{{element.Content}}</td>
+        </div>
+      </ng-container>
+      <ng-container matColumnDef="symbol" style="width:10%;">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element; let i = index" style="float: right;">
+          <button class="btn btn-primary" (click)="detailQuestion(element.ID,i);ScrollDetailQuestion()"><i
+              class="far fa-edit"></i> Edit /
+            Detail</button>
+          <!-- <button class="btn btn-primary" (click)="deleteQuestion(element.ID,i)" style="margin-left: 20px;"><i
+              class="fa fa-trash" aria-hidden="true"></i> Delete </button> -->
+          <button class="btn btn-primary" (click)="openDialogDeleteQuestion(element.ID)" style="margin-left: 20px;"><i
+              class="far fa-trash-alt mr-1"></i>
+            Delete
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>
+<mat-card></mat-card>
+<div style="height: 50px;"></div>

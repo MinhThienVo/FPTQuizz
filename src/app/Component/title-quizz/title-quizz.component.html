@@ -1,0 +1,32 @@
+<div *ngFor="let subject of dataSubjects" class="col-md-12 featured-section">
+  <div class="section-header row">
+    <div class="section-title col-md-6">
+      <h2> {{ subject.Name }} </h2>
+    </div>
+    <div class="section-more-cta col-md-6">
+      <button style="cursor: pointer;" class="btn-more router-link">See more <i class="far fa-angle-right"></i></button>
+    </div>
+  </div>
+  <div class="section-quizzes-list">
+    <div *ngFor="let quizz of subject.Quizzs.slice(0, 6);" class="quiz-info-card-wrapper" title=" {{ quizz.Name }} ">
+      <a class="router-link" style="cursor:pointer;" [routerLink]="['//admin/detail', quizz.Name,quizz.ID]">
+        <div class="card-image">
+          <img
+            src="https://quizizz.com/media/resource/gs/quizizz-media/quizzes/0652b950-5cd0-4f5c-a3bd-f3d43bb1421a?w=300&amp;h=300"
+            alt="">
+        </div>
+        <div class="card-details-container">
+          <div class="quiz-type-title">QUIZ</div>
+          <div class="quiz-name"> {{ quizz.Name }} </div>
+          <div class="quiz-details">
+            <div class="info-ques-count"><i class="fal fa-tasks details-icon"></i>&ensp;10 questions</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.1)" size="medium" color="#281d1d" type="ball-spin" [fullScreen]="false">
+  <p style="color: black"> Loading... </p>
+</ngx-spinner>

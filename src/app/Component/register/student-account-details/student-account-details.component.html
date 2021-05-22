@@ -1,0 +1,69 @@
+<div>
+  <mat-toolbar style="background-color: #461A42; border: 2px solid; box-shadow: 0px 1px 20px black;">
+    <a href="/admin">
+      <img src="https://cf.quizizz.com/img/quizizz_logos/white-brandmark-600x164.png" width="110px" alt="hinh quizz">
+    </a>
+    <span class="example-spacer"></span>
+    <button mat-button routerLink="/login" style="color: white; background-color: #6B4868; margin-right: 50px;">Log
+      In</button>
+  </mat-toolbar>
+</div>
+<div fxLayoutAlign="center start" fxFlexFill class="main-div" style="margin-top: 1px;">
+  <mat-card fxFlex="40">
+    <mat-card-header>
+      <div style="margin: auto;text-align: center">
+        <mat-card-title>Your Account Student Details</mat-card-title>
+      </div>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+      <mat-label>Choose your date of birth</mat-label>
+
+      <!-- <mat-form-field  appearance="fill"> -->
+      <button mat-raised-button (click)="picker.open()" style="width:100%; margin: auto;">
+        <input style="width:80%" matInput placeholder="10/10/2000" [min]="minDate" [max]="maxDate"
+          [matDatepicker]="picker" disabled [(ngModel)]="dateofbirth">
+        <mat-datepicker #picker disabled="false"></mat-datepicker>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      </button>
+      <!-- </mat-form-field> -->
+      <mat-label>Create a username</mat-label>
+      <mat-form-field appearance="outline">
+        <input pattern="\s*\S+.*" matInput type="text" required maxlength="16" placeholder="Username.."
+          [(ngModel)]="username" #usernamee="ngModel">
+        <mat-error class="error" *ngIf="usernamee.invalid">{{errorFristName}}</mat-error>
+      </mat-form-field>
+      <div>
+        <mat-label>Password</mat-label>
+        <mat-form-field appearance="outline" style="width: 100%">
+          <input pattern="\s*\S+.*" matInput #passwordWithValidation [type]="hide ? 'password' : 'text'" required
+            maxlength="16" [formControl]="passwordComponentWithValidation.passwordFormControl" [(ngModel)]="password"
+            placeholder="***********">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-hint align="end" aria-live="polite">
+            {{passwordWithValidation.value.length}} / 16
+          </mat-hint>
+          <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('required')">
+            <span class="sizeinvalid"> Password is required</span>
+          </mat-error>
+          <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('pattern')">
+            <span class="sizeinvalid">Password is not valid</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-password-strength #passwordComponentWithValidation (onStrengthChanged)="onStrengthChanged($event)"
+          [password]="passwordWithValidation.value">
+        </mat-password-strength>
+        <!--Password's strength info-->
+        <mat-password-strength-info style="float:right;" [passwordComponent]="passwordComponentWithValidation">
+        </mat-password-strength-info>
+      </div>
+    </mat-card-content>
+    <button mat-button [disabled]="username === '' || passwordComponentWithValidation.passwordFormControl.invalid"
+      style="width: 100%; background-color: #8753BF; color: white " (click)="SubmitStudent()">
+      Continue </button>
+    <!-- routerLink="/login" -->
+  </mat-card>
+</div>

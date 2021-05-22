@@ -1,0 +1,60 @@
+<div class="settings-page">
+  <div class="settings-page-content">
+    <div class="settings-page-topbar">
+      <h1 class="settings-page-heading">Settings</h1>
+    </div>
+  </div>
+  <div data-v-2bb53aca="" class="settings-group-container">
+    <div data-v-2bb53aca="" class="settings-group-topbar">
+      <i class="fas fa-user-edit" aria-hidden="true" id="editprofile"></i>
+      <h2 data-v-2bb53aca="" class="settings-group-heading">Profile</h2>
+    </div>
+
+    <button (click) = "selectInput()" data-v-2bb53aca="" class="row strip-default-btn-style settings-input-container has-chevron" >
+        <div class="col-md-6">
+          <p data-v-2bb53aca="" class="settings-input-title">Avatar</p>
+          <p data-v-2bb53aca="" class="settings-input-content">Click here to set Avatar </p>
+          <input type="file" id="selectInput" (change)="updateFile($event)" style="display: none;">
+        </div>
+    </button>
+
+    <button data-v-2bb53aca="" class="row strip-default-btn-style settings-input-container has-chevron" (click)="username_openDialog()">
+      <div class="col-md-6">
+
+        <p data-v-2bb53aca="" class="settings-input-title" >Username</p>
+        <p data-v-2bb53aca="" id="UserName" class="settings-input-content">{{user.UserName}}</p>
+      </div>
+      <div>
+      </div>
+    </button>
+    <button data-v-2bb53aca="" class="strip-default-btn-style settings-input-container has-chevron" (click)="name_openDialog()">
+      <p data-v-2bb53aca="" class="settings-input-title">Name</p>
+      <p data-v-2bb53aca="" id="name" class="settings-input-content" >
+        {{ user.FirstName + ' ' + user.LastName }}</p>
+    </button>
+    <button data-v-2bb53aca="" class="strip-default-btn-style settings-input-container has-chevron" (click)="grade_openDialog()">
+      <p data-v-2bb53aca="" class="settings-input-title">Grade</p>
+      <p data-v-2bb53aca="" class="settings-input-content"></p>
+    </button>
+
+    <!---->
+  </div>
+  <div data-v-2bb53aca="" class="settings-group-container">
+    <div data-v-2bb53aca="" class="settings-group-topbar">
+      <i class="fas fa-user-circle" id="iconaccountsetting"></i>
+      <h2 data-v-2bb53aca="" class="settings-group-heading">Account settings</h2>
+    </div>
+    <button data-v-2bb53aca="" class="strip-default-btn-style settings-input-container has-chevron update-password-button" (click)="password_openDialog()">
+      <p data-v-2bb53aca="" class="settings-input-title">Update password</p>
+
+    </button>
+    <button data-v-2bb53aca=""
+      class="strip-default-btn-style settings-input-container has-chevron delete-account-button" (click)="delete_openDialog()">
+      <p data-v-2bb53aca="" class="settings-input-title">Delete account</p>
+
+    </button>
+    <button data-v-2bb53aca="" class="strip-default-btn-style settings-input-container log-out-button">
+      <span data-v-2bb53aca="" class="settings-input-title">Log out</span>
+    </button>
+  </div>
+</div>

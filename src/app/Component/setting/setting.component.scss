@@ -1,0 +1,387 @@
+.settings-view {
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 6px 0 rgb(0 0 0 / 11%);
+  padding: 24px;
+  max-width: 624px;
+  margin: 0.1rem auto 5rem auto;
+  border-top: 6px solid #461A42;
+  background-color: #fff;
+  display: block;
+}
+
+.signup-header {
+  margin-bottom: 30px;
+}
+
+.settings-logo {
+  vertical-align: middle;
+}
+
+.title {
+  color: #393A68;
+  font-size: 24px;
+  margin-left: 30px;
+  vertical-align: middle;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.settings-control-wrapper {
+  padding: 0 24px;
+}
+
+.category-label {
+  margin-bottom: 10px;
+  font-weight: 600;
+  padding: 0 14px;
+  color: #393A68;
+}
+
+.cat-icon.cat-user {
+  background-color: #393A68;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.cat-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 900;
+}
+
+.fa,
+.fas,
+.far,
+.fal,
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.fa-user:before {
+  content: "";
+}
+
+.cat-name {
+  display: block;
+  vertical-align: middle;
+}
+
+.hr-category {
+  height: 2px;
+  margin-top: 15px;
+  background-image: linear-gradient(to right, #f7f7f7 0%, #cad2dc 50%, #f7f7f7 100%);
+  border: none;
+  margin-bottom: 6px;
+}
+
+.field email {
+  position: relative;
+}
+mat-form-field{
+  width: 100%;
+}
+
+label {
+  display: block;
+  padding-left: 14px;
+  font-size: 14px;
+  color: #393a86;
+  margin-top: 16px;
+}
+
+.settings-view .settings-control-wrapper .field .kr-textbox {
+  display: block;
+  font-size: 14px;
+  height: 48px;
+  padding: 0 14px;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: none;
+  margin: 8px 0;
+  border: 1px solid #CAD2DC;
+  color: #393A68;
+}
+
+.kr-textbox {
+  position: relative;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: "Open Sans", sans-serif, Helvetica, Arial;
+}
+
+input {
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+  appearance: auto;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  font: 400 13.3333px Arial;
+}
+
+.loading-spinner hidden {
+  position: absolute;
+  right: 14px;
+  top: 38px;
+  font-size: 18px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.kr-anim-spin {
+  animation: spin 1s linear infinite;
+}
+
+.fal {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+}
+
+.status-msg hidden {
+  min-height: 20px;
+  line-height: 20px;
+  padding: 4px 8px;
+  font-size: 14px;
+  color: #7b7b7b;
+}
+
+.ok-icon hidden {
+  background-color: #5DE2A5;
+  position: absolute;
+  top: 42px;
+  font-size: 12px;
+  right: 12px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.not .ok-icon hidden {
+  background-color: #F14D76;
+  position: absolute;
+  top: 42px;
+  font-size: 12px;
+  right: 12px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  border-radius: 50%
+}
+
+.username {
+  position: relative;
+}
+
+label {
+  display: block;
+  padding-left: 14px;
+  font-size: 14px;
+  color: #393a86;
+  margin-top: 16px;
+  cursor: default;
+}
+
+.loading-spinner hidden {
+  position: absolute;
+  right: 14px;
+  top: 38px;
+  font-size: 18px;
+}
+.fa-check:before {
+  content: "";
+}
+.fa-times:before {
+  content: "";
+}
+.status-msg hidden {
+  min-height: 20px;
+  line-height: 20px;
+  padding: 4px 8px;
+  font-size: 14px;
+  color: #7b7b7b;
+}
+
+.settings-view .settings-control-wrapper .kr-btn {
+  padding: 0;
+  margin: 24px 0;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: #7D72EC;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 10%);
+  border: none;
+  opacity: 0.9;
+}
+
+.kr-btn .blue {
+  color: #fff;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.kr-selectbox {
+  font-size: 16px;
+  position: relative;
+}
+
+.kr-selectbox .kr-selectbox-focus-helper {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  left: -1000px;
+  color: transparent;
+}
+
+.kr-selectbox-selected-option {
+  padding: 0 14px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: none;
+  margin: 8px 0;
+  border: 1px solid #CAD2DC;
+  color: #393A68;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+}
+
+.kr-selectbox-selected-option .open {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.kr-selectbox .kr-selectbox-selected-option:not(.disabled) {
+  cursor: pointer;
+}
+
+.field.kr-selectbox-list-item-img {
+  margin-top: 0;
+  vertical-align: middle;
+  height: 48px;
+}
+
+.language-select .kr-selectbox-list-item-img {
+  background-repeat: no-repeat;
+}
+
+.kr-selectbox-list-item-img {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  float: left;
+  background-position: center;
+  background-size: contain;
+  margin-right: 8px;
+}
+
+.kr-selectbox .kr-selectbox-search-input {
+  position: static;
+  z-index: initial;
+  padding: 8px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 0.5px solid #dedede;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.kr-selectbox-list-container li {
+  list-style: none;
+  display: flex;
+  margin: 3px;
+  padding: 5px;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+}
+
+.kr-selectbox-list-container li:hover {
+  background-color: rgb(247, 247, 247);
+}
+
+.kr-selectbox-list-container {
+  width: 100%;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.kr-selectbox-selected-option-text {
+  width: 100%;
+  display: contents;
+}
+
+.settings-view .settings-control-wrapper .delete-acc-msg {
+  color: #EC0B43;
+  font-size: 14px;
+  margin-bottom: 6px;
+  margin-top: 14px;
+}
+
+.settings-view .settings-control-wrapper .delete-account-btn {
+  background-color: #fff;
+  color: #EC0B43;
+  border: 2px solid #EC0B43;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  transition: all 0.2s ease;
+}
+
+.settings-view .settings-control-wrapper .field .status-msg {
+  min-height: 20px;
+  line-height: 20px;
+  padding: 4px 8px;
+  font-size: 14px;
+  color: #7b7b7b;
+}

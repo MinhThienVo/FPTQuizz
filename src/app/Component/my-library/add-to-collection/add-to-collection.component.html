@@ -1,0 +1,28 @@
+<div>
+    <div class="header">
+        <img src="https://cf.quizizz.com/img/icons/collection.png">
+        <span class="title" style="margin-left: 20px;">Add "{{quizzName |
+            slice:0:20}}..." to a
+            collection...</span>
+    </div>
+    <hr>
+    <div class="listCollection" style="height: 300px">
+        <div *ngFor="let item of dataCollection" style="font-size: 25px;">
+            <mat-checkbox class="example-margin" color="primary"></mat-checkbox>
+            <label style="margin-left: 10px;">{{item.name}}</label>
+        </div>
+    </div>
+    <hr>
+    <div class="createCollection">
+        <div class="formfield">
+            <mat-label>Create a new collection</mat-label>
+            <mat-form-field appearance="outline">
+                <input matInput type="text" [(ngModel)]="newCollectionName">
+            </mat-form-field>
+            <div style="text-align: right;">
+                <button mat-button class="btn" (click)="onCancelClick()">Cancel</button>
+                <button mat-button class="btn" (click)="onCreateClick(newCollectionName)" [disabled]="newCollectionName === ''">Create</button>
+            </div>
+        </div>
+    </div>
+</div>

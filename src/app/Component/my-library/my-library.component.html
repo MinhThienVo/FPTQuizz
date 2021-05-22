@@ -1,0 +1,138 @@
+<div class="row">
+
+  <div class="my-quizz-container col-md-7">
+    <div style="margin:30% 40%;" [ngStyle]="{display: hide()}">
+      <mat-spinner *ngIf="spin"></mat-spinner>
+    </div>
+    <div class="quizz" *ngFor="let item of dataLibrary" style="width:
+      100%;height: 130px; margin-top: 5px; padding: 5px; z-index: 0">
+      <a style="z-index: -1" [routerLink]="['//admin/detail', item.Name,item.ID]">
+        <div class="" style="margin-bottom: 20px;">
+          <div class="imgQuiz" style="background-color:#9d9d4a;
+            background-image: url('{{item.Image}}')">
+          </div>
+          <div class="dataQuiz" style="height: 120px; color: black">
+            <div class="content-title">
+              Quizz
+            </div>
+            <div class="name">
+              <h4>{{item.Name | slice:0:20 }}...</h4>
+            </div>
+            <div class="details" style="display: block; font-size:
+              12px;
+              margin-bottom: 5px;color: #b8b8b8">
+              <div class="questions-length"><i aria-hidden="true" class="far
+                  fa-presentation"></i> 1 Question</div>
+              <div class="grades"><i aria-hidden="true" class="fal
+                  fa-book"></i> 3rd grade</div>
+              <div class="played"><i aria-hidden="true" class="fal
+                  fa-play"></i> Played 0 times</div>
+              <!-- <div class="likes hidden"><i aria-hidden="true" class="fal fa-heart"></i> 0</div> -->
+            </div>
+            <div class="action">
+              <div class="create-by" style="display: inline-flex">
+                <div class="img-user" style="background-color:
+                  #5DE2A5;margin-right: 5px; width: 20px;
+                  height: 20px;
+                  background-image: url('#'); border-radius:
+                  20px"></div>
+                <div class="user-data">
+                  <a href="https://www.google.com/" style="color: black">Tên
+                    user...</a>
+                </div>
+              </div>
+              <div class="action-btns" style="font-size: 12px;
+                float: right">
+                <button class="action-bton like">
+                  <i aria-hidden="true" class="fal fa-heart"></i>
+                  Like
+                </button>
+                <button class="action-bton save" (click)="add_to_collection(item, $event)" style="z-index:
+                  2">
+                  <i aria-hidden="true" class="fas tagged
+                    fa-folder"></i> Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="collection-container col-md-5 row">
+    <div class="show-collection row" style="width: 100%">
+      <div class="" style="width: 100%">
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" fxFlexFill id="headingOne">
+              <a class="btn" style="width: 100%; text-align: left" type="button" data-toggle="collapse"
+                data-target="#collectionlist" aria-expanded="true" aria-controls="collapseOne">
+                <div class="collection-title-img"></div>
+                Collections
+                <i class="chevron far fa-caret-circle-down" style="float: right;
+                  margin-top: 5px"></i>
+              </a>
+            </div>
+            <div id="collectionlist" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body collections-list">
+                <ul>
+                  <li>
+                    <button role="link" data-id="all" class="tag selected">
+                      <i class="far fa-folder-open" aria-hidden="true"></i> My
+                      library
+                    </button>
+                  </li>
+                  <li>
+                    <button role="link" data-id="createdByMe" class="tag
+                      selected">
+                      <i class="fas fa-folder" aria-hidden="true"></i> Created
+                      by me
+                    </button>
+                  </li>
+                  <li>
+                    <button role="link" data-id="liked" class="tag selected">
+                      <i class="fas fa-heart" aria-hidden="true"></i> Liked
+                    </button>
+                  </li>
+                  <li>
+                    <button role="link" data-id="sharedWithMe" class="tag">
+                      <i class="fas fa-globe" aria-hidden="true"></i> Shared
+                      with me
+                    </button>
+                  </li>
+                </ul>
+                <hr>
+                <div class="user-collections" *ngFor="let
+                  namecollection of
+                  dataCollection">
+                  <div>
+                    <button class="tag selected btnn">
+                      <i class="fas fa-folder"></i>
+                      <span style="margin-left: 10px">
+                        {{namecollection.name}}</span>
+                      <span class="num-items">1</span>
+                      <div class="act">
+                        <button class="act-btn" (click)="edit_collection(namecollection.ID)"><i class="far fa-edit"></i>
+                        </button>
+                        <button class="act-btn" (click)="delete_collection(namecollection.ID)"><i class="fas
+                            fa-trash-alt"></i></button>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <a class="btn" style="width: 100%;
+                    text-align: left; color:
+                    cornflowerblue" type="button" (click)="create_collection()">
+                    Create collection</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="height: 50px"></div>

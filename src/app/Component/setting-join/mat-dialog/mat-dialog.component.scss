@@ -1,0 +1,109 @@
+.settings-page-content[data-v-2bb53aca] {
+    border-radius: 16px;
+    margin-top: 56px;
+}
+
+.settings-page-content[data-v-2bb53aca] {
+    min-height: 100vh;
+    padding: 16px 16px 84px 16px;
+    position: relative;
+    z-index: 2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+body {
+    font-family: Quicksand,Helvetica,Arial;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+body, html {
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.update-settings-buttons-container button[data-v-3c36f038] {
+    float:right;
+    padding: 12px 24px;
+    background-color: #fff;
+    color: #9d9da4;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}
+.update-settings-buttons-container button.primary[data-v-3c36f038] {
+    background-color: #fceed5;
+    color: #efa929;
+    position: relative;
+    height: 42px;
+}
+.update-settings-input[data-v-3c36f038] {
+    width: 100%;
+    height: 40px;
+    padding: 0 8px;
+    font-size: 16px;
+    border: 1px solid #9d9da4;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.update-settings-input[data-v-3c36f038]:focus{
+    outline: none;
+}
+
+.cdk-overlay-dark-backdrop [data-v-2bb53aca]{
+    background: rgba(0,0,0,.8);
+}
+.mat-dialog-container {
+    display: block;
+    padding: 24px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: auto;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    max-height: inherit;
+    border-radius: 10px;
+}
+.update-settings-buttons-container[data-v-3c36f038] {
+    margin-top: 24px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.update-settings-classes[data-v-3c36f038], .update-settings-instructions[data-v-3c36f038] {
+    display: block;
+    margin-bottom: 16px;
+    color: #9d9da4;
+    font-size: 14px;
+}

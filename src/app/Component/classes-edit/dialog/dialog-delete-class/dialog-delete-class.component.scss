@@ -1,0 +1,55 @@
+.kr-modal-body .header {
+  font-weight: 600;
+  font-size: 24px;
+  color: #292A3A;
+  margin-bottom: 6px;
+}
+
+.kr-modal-body .msg {
+  font-weight: 600;
+  font-size: 16px;
+  color: #292A3A;
+}
+
+.kr-modal-body .footer {
+  margin-top: 24px;
+  text-align: right;
+}
+
+.kr-modal-body .footer .cancel-btn {
+  padding: 8px 16px;
+  color: rgba(41, 42, 58, 0.66);
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.kr-modal-body .footer .action-btn.archive,
+.kr-modal-body .footer .action-btn.delete,
+.kr-modal-body .footer .action-btn.remove {
+  background-color: #fcdbe3;
+  color: #ec0b43;
+}
+
+.kr-modal-body .footer .action-btn {
+  padding: 8px 16px;
+  color: rgba(41, 42, 58, 0.66);
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #fdf2df;
+  color: #292A3A;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.kr-modal-body .footer .cancel-btn:hover {
+  background-color: #f2f2f2;
+}
+
+.kr-modal-body .footer .action-btn:hover {
+  box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 10%);
+}
